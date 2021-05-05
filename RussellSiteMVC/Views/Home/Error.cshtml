@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<img src="~/Content/Images/street-cone.png" style=" width: 100px; padding-top: var(--gap-large); grid-column: 3 / 4; text-align: right; margin: 60px 0 0 100px;" />
+<div class="error-box">
+    <div class="error-text">
+        <p style="margin-bottom: 14px; font-weight: 100; font-size: .65rem;">Note: Website is undergoing maintenance at this time.</p>
+        <h1>404:</h1>
+        <h2>We couldn't find that.</h2>
+        <h2>It is possible...</h2>
+        <ul>
+            <li><p>The webpage does not exist.</p></li>
+            <li><p>The webpage has been moved permanently.</p></li>
+        </ul>
+
+    </div>
+    <div class="error-buttons">
+        @Html.ActionLink("Russell Standard", "Index", "Home")
+        @Html.ActionLink("Hammaker East", "HammakerEast", "Home")
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RussellSiteMVC.Models.User>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+    <div class="user-manager-list">
+        <ul style="width: 120px;">
+            <li>@ViewBag.Message</li>
+            <li style="color: green;">@HttpContext.Current.User.Identity.Name</li>
+            <li>
+                <p>@Html.ActionLink("Create New", "Create")</p>
+            </li>
+        </ul>
+    </div>
+
+<table class="table table-users">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAdmin)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Username)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Password)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsAdmin)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+        @Html.ActionLink("Details", "Details", new { id = item.ID })
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+    }
+</table>

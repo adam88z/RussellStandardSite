@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div class="shopping-sidebar-left">
+        <ul>
+            <li><h2>Shopping tab</h2></li>
+            <li><p>Tools</p></li>
+            <li><p>Search</p></li>
+            <li><p>Filter</p></li>
+        </ul>
+    </div>
+    <div class="shopping-flexbox">
+        <div class="shopping-text"><p>High quality, durable traffic safety equipment that meets industy standards.</p></div>
+        <div class="shopping-block"><p>We offer custom signs.</p></div>
+
+        @*<div class="shopping-items">
+            <div class="shopping-items-description"><p>Road Bend</p></div>
+            <img src="~/images/sign5.png" />
+        </div>
+        <div class="shopping-items">
+            <div class="shopping-items-description"><p>Slippery Road</p></div>
+            <img src="~/images/sign7.png" />
+        </div>
+        <div class="shopping-items">
+            <div class="shopping-items-description"><p>No Crossing</p></div>
+            <img src="~/images/sign8.png" />
+        </div>
+        <div class="shopping-items">
+            <div class="shopping-items-description"><p>Description</p></div>
+        </div>
+        <div class="shopping-items">
+            <div class="shopping-items-description"><p>Description</p></div>
+        </div>
+        <div class="shopping-items">
+            <div class="shopping-items-description"><p>Description</p></div>
+        </div>
+        <div class="shopping-items">
+            <div class="shopping-items-description"><p>Description</p></div>
+        </div>
+        <div class="shopping-items">
+            <div class="shopping-items-description"><p>Description</p></div>
+        </div>
+        <div class="shopping-items">
+            <div class="shopping-items-description"><p>Description</p></div>
+
+        </div>*@
+
+        <script type="text/javascript">
+            function ShopifyBuyInit() {
+                var client = ShopifyBuy.buildClient({
+                    domain: 'embeds.myshopify.com',
+                    apiKey: '952162710f94aa7b7644b14b2a94f4a3',
+                    appId: '6',
+                });
+
+                ShopifyBuy.UI.onReady(client).then(function (ui) {
+                    ui.createComponent('product', {
+                        id: [3030475907],
+                        node: document.getElementById('product-component-05cfb487fb6'),
+                        moneyFormat: '%24%7B%7Bamount%7D%7D',
+                        options: {
+                            "product": {
+                                "styles": {
+                                    "button": {
+                                        "background-color": "#292929",
+                                        ":hover": { "background-color": "#464646" },
+                                        ":focus": { "background-color": "#464646" }
+                                    },
+                                }
+                            }
+                        }
+                    });
+                });
+            }
+
+            (function () {
+                var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+                window.ShopifyBuy && window.ShopifyBuy.UI ? ShopifyBuyInit() : loadScript();
+
+                function loadScript() {
+                    var script = document.createElement('script');
+                    script.async = true;
+                    script.src = scriptURL;
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                    script.onload = ShopifyBuyInit;
+                }
+            })();
+        </script>
+        <div style="grid-column: 1 / -1; margin: 0 auto;" id='product-component-05cfb487fb6'></div>
+    </div>
+    @*<div class="shop-image"></div>*@
+</body>
+</html>

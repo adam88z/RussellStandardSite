@@ -1,0 +1,397 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8CF112DD-0246-440A-9B0B-8F3F0498C2C0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LakeErieTrafficSite</RootNamespace>
+    <AssemblyName>LakeErieTrafficSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\main.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="Data.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="graphics\3eriejobs.aspx" />
+    <Content Include="graphics\fiftymillionbid.aspx" />
+    <Content Include="graphics\ac.aspx" />
+    <Content Include="graphics\branding.aspx" />
+    <Content Include="graphics\emulsions.aspx" />
+    <Content Include="graphics\hma.aspx" />
+    <Content Include="graphics\images\ac-graphic.png" />
+    <Content Include="graphics\images\check.png" />
+    <Content Include="graphics\images\coney.png" />
+    <Content Include="graphics\images\coolio.png" />
+    <Content Include="graphics\images\empty-dollar.png" />
+    <Content Include="graphics\images\empty-dollar2.jpg" />
+    <Content Include="graphics\images\emulsions-tank1.png" />
+    <Content Include="graphics\images\emulsions-tank2.png" />
+    <Content Include="graphics\images\expoint.png" />
+    <Content Include="graphics\images\facility3_large.jpg" />
+    <Content Include="graphics\images\full-dollar.png" />
+    <Content Include="graphics\images\full-dollar2.jpg" />
+    <Content Include="graphics\images\full-dollargreen.jpg" />
+    <Content Include="graphics\images\he.png" />
+    <Content Include="graphics\images\liney.png" />
+    <Content Include="graphics\images\patterny.png" />
+    <Content Include="graphics\images\paved_road2.jpg" />
+    <Content Include="graphics\images\pmac-tank.png" />
+    <Content Include="graphics\images\road.png" />
+    <Content Include="graphics\images\soft3.png" />
+    <Content Include="graphics\images\something2.png" />
+    <Content Include="graphics\images\street-cone.png" />
+    <Content Include="graphics\images\tanky.png" />
+    <Content Include="graphics\images\trademarks\asphaltlogo.jpg" />
+    <Content Include="graphics\images\trademarks\favicon.png" />
+    <Content Include="graphics\images\trademarks\Hammaker East, LTD %282%29.jpg" />
+    <Content Include="graphics\images\trademarks\Hammaker East, LTD 75.jpg" />
+    <Content Include="graphics\images\trademarks\Hammaker East, LTD.jpg" />
+    <Content Include="graphics\images\trademarks\hammaker-grey.png" />
+    <Content Include="graphics\images\trademarks\HE Emulsions 4.1.15 %282%29.jpg" />
+    <Content Include="graphics\images\trademarks\HE Emulsions 4.1.15 75.jpg" />
+    <Content Include="graphics\images\trademarks\HE Emulsions 4.1.15.jpg" />
+    <Content Include="graphics\images\trademarks\he-logo.png" />
+    <Content Include="graphics\images\trademarks\he.png" />
+    <Content Include="graphics\images\trademarks\image1442.png" />
+    <Content Include="graphics\images\trademarks\LMS Logo 2018.jpg" />
+    <Content Include="graphics\images\trademarks\LMS-Logo-2018-thumb.jpg" />
+    <Content Include="graphics\images\trademarks\logo.png" />
+    <Content Include="graphics\images\trademarks\logo_triangles.png" />
+    <Content Include="graphics\images\trademarks\logo_with_triangles_white.png" />
+    <Content Include="graphics\images\trademarks\masthead_logo.png" />
+    <Content Include="graphics\images\trademarks\nav-img-logo.jpg" />
+    <Content Include="graphics\images\trademarks\opacity-fav.png" />
+    <Content Include="graphics\images\trademarks\Pittsburgh Parks Conservancy logo + URL.JPG" />
+    <Content Include="graphics\images\trademarks\rs.png" />
+    <Content Include="graphics\images\trademarks\rsheroad.jpg" />
+    <Content Include="graphics\images\trademarks\rslogo-black.png" />
+    <Content Include="graphics\images\trademarks\rs_logo.gif" />
+    <Content Include="graphics\images\trademarks\rs_opacity.png" />
+    <Content Include="graphics\images\trademarks\Russell Standard Corp %282%29.jpg" />
+    <Content Include="graphics\images\trademarks\Russell Standard Corp 75.jpg" />
+    <Content Include="graphics\images\trademarks\Russell Standard Corp.jpg" />
+    <Content Include="graphics\images\trademarks\russell-grey.png" />
+    <Content Include="graphics\images\trademarks\russell-logo-inset.png" />
+    <Content Include="graphics\images\trademarks\russell-standard-cup.jpg" />
+    <Content Include="graphics\images\trademarks\russell-standard2.jpg" />
+    <Content Include="graphics\images\trademarks\russelltriangle.jpg" />
+    <Content Include="graphics\images\trademarks\shadow2.png" />
+    <Content Include="graphics\images\trademarks\shadow3.png" />
+    <Content Include="graphics\images\trademarks\Stacked Logo Updated.png" />
+    <Content Include="graphics\images\trademarks\Sterlingwood LOGO.jpg" />
+    <Content Include="graphics\images\trademarks\sterlingwood-grey.png" />
+    <Content Include="graphics\images\trademarks\sw.png" />
+    <Content Include="graphics\images\trademarks\Three Gears RBB.jpg" />
+    <Content Include="graphics\images\trademarks\TPR STW Logo_CMYK_1_12_16.jpg" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\favicon.png" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\Hammaker-East,-LTD.jpg" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\HE Emulsions 4.1.15 75.jpg" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\he-logo.png" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\image1442.png" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\LMS-Logo-2018-thumb.jpg" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\logo_triangles.png" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\logo_with_triangles_white.png" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\masthead_logo.png" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\nav-img-logo.jpg" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\PPC.jpg" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\russell-standard-cup.jpg" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\russell-standard2.jpg" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\russelltriangle.jpg" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\Stacked Logo Updated.png" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\Three Gears RBB.jpg" />
+    <Content Include="graphics\images\trademarks\trademark_thumbs\TPR-STW-Logo_CMYK_1_12_16.jpg" />
+    <Content Include="graphics\images\triangle.png" />
+    <Content Include="graphics\images\truck-jasahi.png" />
+    <Content Include="graphics\images\truck-jasatruck.png" />
+    <Content Include="graphics\images\x.png" />
+    <Content Include="graphics\index.aspx" />
+    <Content Include="graphics\jasahp.aspx" />
+    <Content Include="graphics\javascript\javascript.js" />
+    <Content Include="graphics\css\main.css" />
+    <Content Include="graphics\images\opacity-fav.png" />
+    <Content Include="graphics\images\pic_153_2.jpg" />
+    <Content Include="graphics\css\reset.css" />
+    <Content Include="graphics\images\rs.png" />
+    <Content Include="graphics\images\something.png" />
+    <Content Include="graphics\images\sw.png" />
+    <Content Include="graphics\images\tankmation.PNG" />
+    <Content Include="graphics\pmac.aspx" />
+    <Content Include="graphics\test.html" />
+    <Content Include="graphics\images\towers_edited.jpg" />
+    <Content Include="images\50M-small.mp4" />
+    <Content Include="images\asphalt background.jpg" />
+    <Content Include="images\layout.png" />
+    <Content Include="images\LETC copy.tif" />
+    <Content Include="images\LETC.JPG" />
+    <Content Include="images\LETC_Background.tif" />
+    <Content Include="images\LETC_banner.jpg" />
+    <Content Include="images\LETC_bg_big.jpg" />
+    <Content Include="images\LETC_desktop_background.jpg" />
+    <Content Include="images\LETC_egg.png" />
+    <Content Include="images\LETC_fav.png" />
+    <Content Include="images\letc_img1.jpg" />
+    <Content Include="images\letc_mainbg.jpg" />
+    <Content Include="images\letc_mainbg_better.jpg" />
+    <Content Include="images\pexels\abstract-tunnel-low.jpg" />
+    <Content Include="images\pexels\abstract-walls-low.jpg" />
+    <Content Include="images\pexels\autumn-road-low.jpg" />
+    <Content Include="images\pexels\bike-sign-low.jpg" />
+    <Content Include="images\pexels\blury.jpg" />
+    <Content Include="images\pexels\brick-wall-low.jpg" />
+    <Content Include="images\pexels\california-road-low.jpg" />
+    <Content Include="images\pexels\exit-sign.jpg" />
+    <Content Include="images\pexels\fall-autumn-red-season-low.jpg" />
+    <Content Include="images\pexels\feet-arrow-low.jpg" />
+    <Content Include="images\pexels\garden-low.jpg" />
+    <Content Include="images\pexels\hr-stock-low.jpg" />
+    <Content Include="images\pexels\hr-stock2-low.jpg" />
+    <Content Include="images\pexels\hr-stock3-low.jpg" />
+    <Content Include="images\pexels\low-road-low.jpg" />
+    <Content Include="images\pexels\night-shade-low.jpg" />
+    <Content Include="images\pexels\night-timelapse-low.jpg" />
+    <Content Include="images\pexels\onramp-low.jpg" />
+    <Content Include="images\pexels\open-road-low.jpg" />
+    <Content Include="images\pexels\phone-road-low.jpg" />
+    <Content Include="images\pexels\qa-sign.jpg" />
+    <Content Include="images\pexels\road-clouds-low.jpg" />
+    <Content Include="images\pexels\road-trees-low.jpg" />
+    <Content Include="images\pexels\road-trees2-low.jpg" />
+    <Content Include="images\pexels\road-trees3-low.jpg" />
+    <Content Include="images\pexels\road-trees4-low.jpg" />
+    <Content Include="images\pexels\rock-wall-low.jpg" />
+    <Content Include="images\pexels\rocky-road-low.jpg" />
+    <Content Include="images\pexels\speed-sign.jpg" />
+    <Content Include="images\pexels\stock-color-low.jpg" />
+    <Content Include="images\pexels\stop-sign-low.jpg" />
+    <Content Include="images\pexels\timelapse-tunnel-low.jpg" />
+    <Content Include="images\pexels\traffic-light-low.jpg" />
+    <Content Include="images\pexels\traffic-light-sideways-low.jpg" />
+    <Content Include="images\pexels\two-way-sign.jpg" />
+    <Content Include="images\pexels\vines-low.jpg" />
+    <Content Include="images\pexels\wall-hats.jpg" />
+    <Content Include="images\pexels\worker-blueprints.jpg" />
+    <Content Include="images\street-cone2.png" />
+    <Content Include="images\test.mp4" />
+    <Content Include="images\worker1.jpg" />
+    <Content Include="javascript\script.js" />
+    <Content Include="slideshow\Default.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data.aspx.cs">
+      <DependentUpon>Data.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data.aspx.designer.cs">
+      <DependentUpon>Data.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="graphics\3eriejobs.aspx.cs">
+      <DependentUpon>3eriejobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="graphics\3eriejobs.aspx.designer.cs">
+      <DependentUpon>3eriejobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="graphics\fiftymillionbid.aspx.cs">
+      <DependentUpon>fiftymillionbid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="graphics\fiftymillionbid.aspx.designer.cs">
+      <DependentUpon>fiftymillionbid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="graphics\ac.aspx.cs">
+      <DependentUpon>ac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="graphics\ac.aspx.designer.cs">
+      <DependentUpon>ac.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="graphics\branding.aspx.cs">
+      <DependentUpon>branding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="graphics\branding.aspx.designer.cs">
+      <DependentUpon>branding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="graphics\emulsions.aspx.cs">
+      <DependentUpon>emulsions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="graphics\emulsions.aspx.designer.cs">
+      <DependentUpon>emulsions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="graphics\hma.aspx.cs">
+      <DependentUpon>hma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="graphics\hma.aspx.designer.cs">
+      <DependentUpon>hma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="graphics\Illustrations.Master.cs">
+      <DependentUpon>Illustrations.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="graphics\Illustrations.Master.designer.cs">
+      <DependentUpon>Illustrations.Master</DependentUpon>
+    </Compile>
+    <Compile Include="graphics\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="graphics\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="graphics\jasahp.aspx.cs">
+      <DependentUpon>jasahp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="graphics\jasahp.aspx.designer.cs">
+      <DependentUpon>jasahp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="graphics\pmac.aspx.cs">
+      <DependentUpon>pmac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="graphics\pmac.aspx.designer.cs">
+      <DependentUpon>pmac.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="slideshow\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="slideshow\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\LETC_egg_clipped.psd" />
+    <Content Include="graphics\Illustrations.Master" />
+    <Content Include="graphics\Brands.pdf" />
+    <Content Include="graphics\images\trademarks\RSC-HE Products Overview and Capabilites and Helpful Tools-Corinne Chalovich.pdf" />
+    <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59308</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

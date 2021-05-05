@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MainDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Subject" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+          <Property Name="Message" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Items">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="Horn_Backup_Alarm_Ok" Type="varchar" MaxLength="255" />
+          <Property Name="Horn_Backup_Alarm_Defect" Type="varchar" MaxLength="255" />
+          <Property Name="Horn_Backup_Alarm_Notes" Type="varchar" MaxLength="255" />
+          <Property Name="Seatbelt_Ok" Type="varchar" MaxLength="255" />
+          <Property Name="Seatbelt_Defect" Type="varchar" MaxLength="255" />
+          <Property Name="Seatbelt_Notes" Type="varchar" MaxLength="255" />
+          <Property Name="Lights_Strobe_Beacon_Ok" Type="varchar" MaxLength="255" />
+          <Property Name="Lights_Strobe_Beacon_Defect" Type="varchar" MaxLength="255" />
+          <Property Name="Lights_Strobe_Beacon_Notes" Type="varchar" MaxLength="255" />
+          <Property Name="Brakes_Parking_Brake_Ok" Type="varchar" MaxLength="255" />
+          <Property Name="Brakes_Parking_Brake_Defect" Type="varchar" MaxLength="255" />
+          <Property Name="Brakes_Parking_Brake_Notes" Type="varchar" MaxLength="255" />
+          <Property Name="Steering_Controls_Ok" Type="varchar" MaxLength="255" />
+          <Property Name="Steering_Controls_Defect" Type="varchar" MaxLength="255" />
+          <Property Name="Steering_Controls_Notes" Type="varchar" MaxLength="255" />
+          <Property Name="Mirrors_Ok" Type="varchar" MaxLength="255" />
+          <Property Name="Mirrors_Defect" Type="varchar" MaxLength="255" />
+          <Property Name="Mirrors_Notes" Type="varchar" MaxLength="255" />
+          <Property Name="Fire_Extinguisher_Ok" Type="varchar" MaxLength="255" />
+          <Property Name="Fire_Extinguisher_Defect" Type="varchar" MaxLength="255" />
+          <Property Name="Fire_Extinguisher_Notes" Type="varchar" MaxLength="255" />
+          <Property Name="Roll_Over_Protection_Ok" Type="varchar" MaxLength="255" />
+          <Property Name="Roll_Over_Protection_Defect" Type="varchar" MaxLength="255" />
+          <Property Name="Roll_Over_Protection_Notes" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="MainDataModelStoreContainer">
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dataHead1" store:Type="Tables" />
+          <EntitySet Name="Items" EntityType="Self.Items" Schema="dataHead1" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MainDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Horn_Backup_Alarm_Ok" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Horn_Backup_Alarm_Defect" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Horn_Backup_Alarm_Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Seatbelt_Ok" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Seatbelt_Defect" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Seatbelt_Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Lights_Strobe_Beacon_Ok" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Lights_Strobe_Beacon_Defect" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Lights_Strobe_Beacon_Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Brakes_Parking_Brake_Ok" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Brakes_Parking_Brake_Defect" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Brakes_Parking_Brake_Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Steering_Controls_Ok" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Steering_Controls_Defect" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Steering_Controls_Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Mirrors_Ok" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Mirrors_Defect" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Mirrors_Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Fire_Extinguisher_Ok" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Fire_Extinguisher_Defect" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Fire_Extinguisher_Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Roll_Over_Protection_Ok" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Roll_Over_Protection_Defect" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Roll_Over_Protection_Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="MainDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Items" EntityType="Self.Item" />
+          <EntitySet Name="Contacts" EntityType="MainDataModel.Contact" />
+        </EntityContainer>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Subject" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MainDataModelStoreContainer" CdmEntityContainer="MainDataEntities">
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="MainDataModel.Item">
+              <MappingFragment StoreEntitySet="Items">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Horn_Backup_Alarm_Ok" ColumnName="Horn_Backup_Alarm_Ok" />
+                <ScalarProperty Name="Horn_Backup_Alarm_Defect" ColumnName="Horn_Backup_Alarm_Defect" />
+                <ScalarProperty Name="Horn_Backup_Alarm_Notes" ColumnName="Horn_Backup_Alarm_Notes" />
+                <ScalarProperty Name="Seatbelt_Ok" ColumnName="Seatbelt_Ok" />
+                <ScalarProperty Name="Seatbelt_Defect" ColumnName="Seatbelt_Defect" />
+                <ScalarProperty Name="Seatbelt_Notes" ColumnName="Seatbelt_Notes" />
+                <ScalarProperty Name="Lights_Strobe_Beacon_Ok" ColumnName="Lights_Strobe_Beacon_Ok" />
+                <ScalarProperty Name="Lights_Strobe_Beacon_Defect" ColumnName="Lights_Strobe_Beacon_Defect" />
+                <ScalarProperty Name="Lights_Strobe_Beacon_Notes" ColumnName="Lights_Strobe_Beacon_Notes" />
+                <ScalarProperty Name="Brakes_Parking_Brake_Ok" ColumnName="Brakes_Parking_Brake_Ok" />
+                <ScalarProperty Name="Brakes_Parking_Brake_Defect" ColumnName="Brakes_Parking_Brake_Defect" />
+                <ScalarProperty Name="Brakes_Parking_Brake_Notes" ColumnName="Brakes_Parking_Brake_Notes" />
+                <ScalarProperty Name="Steering_Controls_Ok" ColumnName="Steering_Controls_Ok" />
+                <ScalarProperty Name="Steering_Controls_Defect" ColumnName="Steering_Controls_Defect" />
+                <ScalarProperty Name="Steering_Controls_Notes" ColumnName="Steering_Controls_Notes" />
+                <ScalarProperty Name="Mirrors_Ok" ColumnName="Mirrors_Ok" />
+                <ScalarProperty Name="Mirrors_Defect" ColumnName="Mirrors_Defect" />
+                <ScalarProperty Name="Mirrors_Notes" ColumnName="Mirrors_Notes" />
+                <ScalarProperty Name="Fire_Extinguisher_Ok" ColumnName="Fire_Extinguisher_Ok" />
+                <ScalarProperty Name="Fire_Extinguisher_Defect" ColumnName="Fire_Extinguisher_Defect" />
+                <ScalarProperty Name="Fire_Extinguisher_Notes" ColumnName="Fire_Extinguisher_Notes" />
+                <ScalarProperty Name="Roll_Over_Protection_Ok" ColumnName="Roll_Over_Protection_Ok" />
+                <ScalarProperty Name="Roll_Over_Protection_Defect" ColumnName="Roll_Over_Protection_Defect" />
+                <ScalarProperty Name="Roll_Over_Protection_Notes" ColumnName="Roll_Over_Protection_Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="MainDataModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

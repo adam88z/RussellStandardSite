@@ -1,0 +1,87 @@
+﻿@model LakeErieTrafficSiteMVC.Models.ContactForm
+@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>contact</title>
+</head>
+<body>
+
+    <div class="letc-row-2">
+        <div class="letc-list">
+            <h1>Contact Information</h1>
+            <ul>
+                <li>Lake Erie Traffic Control LLC</li>
+                <li>7760 Francis Rd Girard, PA 16417</li>
+                <li>Phone: 814-240-1188</li>
+                <li>Email: letcsales@lakeerietraffic.com</li>
+            </ul>
+        </div>
+
+        @*<div class="letc-about-paragraph">
+            <p></p>
+        </div>*@
+
+    </div>
+
+    @using (Html.BeginForm("contact", "Home", FormMethod.Post, new { @class = "login-styles-form" }))
+    {
+        <span style="font-size: .65rem; margin-bottom: 8px;">*Please fill out this form with your information.</span>
+        <div>
+            <span>Email</span>
+            @Html.TextBoxFor(model => model.Email, new { @class = "login-styles", placeholder = "" })
+            @Html.ValidationMessageFor(model => model.Email, null, new { @Class = "" })
+        </div>
+        <div>
+            <span>Company Name</span>
+            @Html.TextBoxFor(model => model.Companyname, new { @class = "login-styles", placeholder = "" })
+            @Html.ValidationMessageFor(model => model.Companyname, null, new { @Class = "" })
+        </div>
+        <div>
+            <span>Phone Number</span>
+            @Html.TextBoxFor(model => model.Phonenumber, new { @class = "login-styles", placeholder = "" })
+            @Html.ValidationMessageFor(model => model.Phonenumber, null, new { @Class = "" })
+        </div>
+        <div>
+            <span>First Name</span>
+            @Html.TextBoxFor(model => model.Firstname, new { @class = "login-styles", placeholder = "", })
+            @Html.ValidationMessageFor(model => model.Firstname, null, new { @Class = "" })
+        </div>
+        <div>
+            <span>Last Name</span>
+            @Html.TextBoxFor(model => model.Lastname, new { @class = "login-styles", placeholder = "" })
+            @Html.ValidationMessageFor(model => model.Lastname, null, new { @Class = "" })
+        </div>
+        <div>
+            <span>Subject</span>
+            @Html.TextBoxFor(model => model.Subject, new { @class = "login-styles", placeholder = "" })
+            @Html.ValidationMessageFor(model => model.Subject, null, new { @Class = "" })
+        </div>
+        <div>
+            <span>Message</span>
+            @Html.TextAreaFor(model => model.Message, new { @class = "form-message-box", placehol1der = "" })
+            @Html.ValidationMessageFor(model => model.Message, null, new { @Class = "" })
+        </div>
+        <input type="submit" value="Submit" class="login-styles-button" />
+        <p style=" border-radius: 4px; padding: 0 4px; margin: 4px 0 0 6px; float:left; color: #fff; background-color: green; transform: skewX(-10deg) ">@ViewBag.Message</p>
+    }
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lc1LK4UAAAAAN7HQeMR4jDq0I31p6EKvxDEoETM"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6Lc1LK4UAAAAAN7HQeMR4jDq0I31p6EKvxDEoETM', { action: 'homepage' }).then(function (token) {
+
+            });
+        });
+    </script>
+
+    <script src="~/Scripts/jquery-1.8.0.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

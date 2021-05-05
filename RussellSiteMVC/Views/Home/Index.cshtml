@@ -1,0 +1,533 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@*<div id="dynamic">
+        <p>Resize browser to begin</p>
+    </div>*@
+
+<div class="slideshow-container">
+    <div id="slideshow">
+        <div class="slides" id="slideshow1">
+        </div>
+        <div class="slides" id="slideshow2">
+        </div>
+        <div class="slides" id="slideshow3">
+        </div>
+        <div class="slides" id="slideshow4">
+        </div>
+         @*<div class="slides" id="slideshow5">
+        </div>
+        <div class="slides" id="slideshow6">
+        </div>*@
+    </div>
+    <div class="slideshow-buttons-box">
+        <p class="slideshow-button-left" onclick="slidebuttonleft(-1)">&#10094;</p>
+        <p class="slideshow-button-right" onclick="slidebuttonright(1)">&#10095;</p>
+
+        @*
+            <div class="slideshow-buttons">
+                <span onclick="slidebutton(1)"></span>
+                <span onclick="slidebutton(2)"></span>
+                <span onclick="slidebutton(3)"></span>
+                <span onclick="slidebutton(4)"></span>
+                <span onclick="slidebutton(5)"></span>
+                <span onclick="slidebutton(6)"></span>
+            </div>
+        *@
+
+    </div>
+</div>
+
+<div class="label-nav">
+    <span id="label1" onmouseover="loadLabel1()">
+        Values
+    </span>
+    <span id="label2" onmouseover="loadLabel2()">
+        Materials
+    </span>
+    <span id="label3" onmouseover="loadLabel3()">
+        About
+    </span>
+</div>
+
+<div class="label-box">
+    <div class="label-box-inner clearfix">
+        <div class="label1-text">
+            <p>
+                Our commitment to safety is at the heart of everything we do. Our services strongly emphasize
+                employee training and job-site safety for both our crews and the public.
+            </p>
+            <p>
+                Helping good people succeed is a core value for Russell Standard. For over 90 years, the company has 
+                realized that our number one asset is our employees.
+            </p>
+        </div>
+
+        <div class="label2-text">
+            <p>
+                Our specialty products carry numerous benefits that
+                include being environmentally friendly.
+            </p>
+            <p>
+                When it comes to manufacturing, Russell Standard understands the importance of quality materials when working 
+                on a construction or maintenance project.
+            </p>
+        </div>
+
+        <div class="label3-text">
+            <p>
+                Russell Standard Corporation provides paving materials and services for the road construction
+                industry.
+            </p>
+            <p>
+                As an area of continual development and innovation, Russell Standard maintains a significant number of
+                industry-changing asphalt emulsions each with unique characteristics and specialized uses.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<div class="default-grid-wrapper">
+    <div class="default-grid">
+        <!-- 1 -->
+        <div class="col-1 fade-in-left">
+            <div class="innovation fade-in-left"></div>
+            <h1 class="fade-in-left">Innovation</h1>
+            <p class="fade-in-left">
+                Innovative thinking is the reason Russell Standard is an industry leader,
+                and has led us to offer and develop the industry’s latest specialty products.
+            </p>
+            @*@Html.ActionLink("Innovation", "Innovation", "Home", null, new { @class = "button-pretty fade-in-left" })*@
+        </div>
+        <div class="col-2 fade-in-top">
+            <div class="glasses fade-in-top"></div>
+            <h1 class="fade-in-top">Vision</h1>
+            <p class="fade-in-top">
+                Our Vision is to be the best and most sought after contracting services and materials
+                provider in every market we serve by both customers and employees.
+            </p>
+            @*@Html.ActionLink("Vision", "Vision", "Home", null, new { @class = "button-pretty fade-in-top" })*@
+        </div>
+
+        <div class="col-3 fade-in-right">
+            <div class="tree fade-in-right"></div>
+            <h1 class="fade-in-right">Growth</h1>
+            <p class="fade-in-right">
+                Growing our business, driven by the quality of our products and services.
+            </p>
+            @*@Html.ActionLink("Growth", "Growth", "Home", null, new { @class = "button-pretty fade-in-right" })*@
+        </div>
+
+    </div>
+</div>
+
+<div class="rowey">
+    <div class="rel-float">
+        <h1>Materials</h1>
+        <p style="font-style: italic;">"A leading provider of paving materials and services for the road construction industry."</p>
+    </div>
+</div>
+
+<div class="default-grid-wrapper">
+    <div class="default-grid">
+
+        <div class="col-4 fade-in-left">
+            <div class="environment fade-in-left"></div>
+            <h1 class="fade-in-left">Environment</h1>
+            <p class="fade-in-left">
+                As environmental concerns become increasingly important for all of us, it’s worth noting that we offer specially
+                developed GREEN cold mix asphalt that emits low voc hydrocarbons.
+            </p>
+            @*@Html.ActionLink("Environment", "Environment", "Home", null, new { @class = "button-pretty fade-in-left" })*@
+        </div>
+
+        <div class="col-5 fade-in-top">
+            <div class="safety fade-in-top"></div>
+            <h1 class="fade-in-top">Safety</h1>
+            <p class="fade-in-top">
+                Safety for our employees, our customers and the general public.
+            </p>
+            @*@Html.ActionLink("Safety", "Safety", "Home", null, new { @class = "button-pretty fade-in-top" })*@
+        </div>
+
+        <div class="col-6 fade-in-right">
+            <div class="lock fade-in-right"></div>
+            <h1 class="fade-in-right">Trust</h1>
+            <p class="fade-in-right">
+                Trusting relationships with our customers and our communities.
+            </p>
+            @*@Html.ActionLink("Trust", "Trust", "Home", null, new { @class = "button-pretty fade-in-right" })*@
+        </div>
+    </div>
+</div>
+
+<div class="great-advertisement">
+
+    <div class="great-advertisement-paragraphs">
+
+        <div class="great-advertisement-headers">
+            <h2>Safety comes first</h2>
+            <h1>Setting the example</h1>
+        </div>
+
+        <p class="dropcap">
+            Russell Standard Corporation, headquartered in Pittsburgh, PA, is a leading provider of paving materials and services for the road construction industry. With a highly trained and dedicated team, we meet our customers’ ever-changing needs and enable them to build a better infrastructure in their communities.
+        </p>
+        <p>
+            We offer a full range of products to state and local governments and private contractors including asphalt emulsions
+            and asphalt protective coatings.
+
+            @*@Html.ActionLink("Safety", "Safety", "Home", null, new { @class = "great-advertisement-big-button" })*@
+        </p>
+    </div>
+
+    <div class="great-advertisement-images">
+        <div class="great-advertisement-image"></div>
+        <div class="great-advertisement-image2"></div>
+        <div class="great-advertisement-image3"></div>
+    </div>
+</div>
+
+<div class="newthing">
+    <div class="info-bubble">
+        <p class="info-bubble-text">90 years of innovation and technology for our customers</p>
+    </div>
+
+    <div class="newthing-text">
+        <h1>Your choice for asphalt emulsions and materials.</h1>
+        <p>When it comes to manufacturing, quality materials are paramount.</p>
+    </div>
+
+    @*<div class="newthing-list">
+        <ul>
+            <li>
+                <p>Emulsions Manufacturing</p>
+                <p>Asphalt Preservation</p>
+            </li>
+            <li>
+                <p>Road Maintenance</p>
+                <p>Experiment paragraph test</p>
+            </li>
+        </ul>
+    </div>*@
+</div>
+<!-- End Newthing  -->
+
+<div class="guru">
+    <div class="guru-text-layout">
+        <div class="guru-text">
+
+            <h1 class="fade-in-left">Our Core Purpose</h1>
+            <h2 class="fade-in-left">Improving communities</h2>
+            <h2 class="fade-in-left">Through better infrastructure</h2>
+            <ul class="fade-in-left">
+                <li>Helping good people succeed</li>
+                <li>Building relationships</li>
+                <li>Growing our business</li>
+                <li>Teamwork</li>
+            </ul>
+        </div>
+
+        <div class="guru-side-text">
+            <h1 class="fade-in-top">What we're about</h1>
+            @*<h2 class="fade-in-bottom">Fostering growth</h2>
+                <h2 class="fade-in-bottom">Improving infrastructure</h2>
+                <ul class="fade-in-bottom">
+                    <li>Exceeding expectations</li>
+                    <li>Listening to our clients</li>
+                    <li>Learning from mistakes</li>
+                    <li>Improving ourselves</li>
+                </ul>*@
+            <p class="fade-in-right">
+                Our commitment to safety is at the heart of everything we do.
+                Our services strongly emphasize employee training and job-site safety for both our crews and the public.
+            </p>
+            <p class="fade-in-bottom">
+                Our products focus on creating innovative solutions that combat road surface issues from the foundation to preservation and repair.
+            </p>
+            <span class="tag-wrap">
+                <span class="tag">
+                    tag
+                </span>
+            </span>
+        </div>
+
+        @*<h1 class="fade-in-left">We Value Safety</h1>
+            <p class="fade-in-left">For our employees</p>
+            <p class="fade-in-left">Our customers</p>
+            <p class="fade-in-left">The general public</p>*@
+
+    </div>
+</div>
+
+<div class="buddha">
+    <img src="~/Content/Images/worker-pic.jpg" alt="colorful highway in autumn" />
+    <div class="buddha-text-layout">
+        <div class="buddha-text">
+            <h2 class="fade-in-right">Highly experienced</h2>
+            <h1 class="fade-in-right">Leaders of the industry</h1>
+            <p class="fade-in-right">Our commitment to safety, quality and craftsmanship is the signature we leave on each and every project we touch.</p>
+        </div>
+    </div>
+</div>
+
+<div class="vishnu">
+    <div class="parent">
+        <div class="child2">
+            <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/highway-low.jpeg" /></div>
+            <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/highway2-low.jpeg" /></div>
+            <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/low-road-low.jpg" /></div>
+            <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/abstract-tunnel-low.jpg" /></div>
+
+            <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/onramp-low.jpg" /></div>
+            <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/road-clouds-low.jpg" /></div>
+            <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/road-trees2-low.jpg" /></div>
+            <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/night-shade-low.jpg" /></div>
+            @*
+                <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/stop-sign-low.jpg" /></div>
+                <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/garden-low.jpg" /></div>
+                <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/bike-sign-low.jpg" /></div>
+                <div class="child3"><img onmouseup="vishnuslideshow(this)" src="~/Content/Images/pexels/night-timelapse-low.jpg" /></div>
+            *@
+        </div>
+    </div>
+</div>
+
+<div class="states-container">
+    <h1 class="states-header">Sales Representatives</h1>
+    <div class="states-grid">
+        <div class="states-grid-list">
+            <ul>
+                <li>
+                    <h2>Austin Slater</h2>
+                </li>
+                <li>Blair</li>
+                <li>Cambria</li>
+                <li>Cameron</li>
+                <li>Centre</li>
+                <li>Clearfield</li>
+                <li>Clinton</li>
+                <li>Elk</li>
+                <li>& Somerset Counties</li>
+            </ul>
+
+            <ul>
+                <li>
+                    <h2>Amy Gralish</h2>
+                </li>
+                <li>Allegheny & Beaver Counties</li>
+                <li>District 12</li>
+            </ul>
+
+            <ul>
+                <li>
+                    <h2>Eric Sliviak</h2>
+                </li>
+                <li>Armstrong</li>
+                <li>Butler</li>
+                <li>Clarion</li>
+                <li>Indiana & Jefferson Counties</li>
+            </ul>
+
+            <ul>
+                <li>
+                    <h2>Brian Kleist</h2>
+                </li>
+                <li>Baltimore plant</li>
+                <li>Maryland</li>
+                <li>Delaware</li>
+                <li>Northern Virginia</li>
+                <li>Wisconsin</li>
+                <li>Indiana</li>
+                <li>Illinois</li>
+                <li>Iowa</li>
+            </ul>
+
+            <ul>
+                <li>
+                    <h2>Brigetta Laird</h2>
+                </li>
+                <li>Greensboro & Black Mountain</li>
+                <li>North Carolina</li>
+            </ul>
+
+            <ul>
+                <li>
+                    <h2>Whitney M Brady</h2>
+                </li>
+                <li>Reading Market </li>
+            </ul>
+
+        </div>
+
+        <!-- end states grid list-->
+
+        <div class="states-map" usemap="#statemap">
+            <!-- These are the circle you hover over to trigger the text -->
+
+            <div class="state-circles" id="ny" onmouseover="loadNY()"><span class="states-tooltip">ny</span></div>
+
+            <div class="state-circles" id="pa" onmouseover="loadPA()"></div>
+            <span class="states-tooltip">Whitney Brady<br />Amy Gralish</span>
+            <div class="state-circles" id="oh" onmouseover="loadOH()"><span class="states-tooltip"></span></div>
+            <div class="state-circles" id="wv" onmouseover="loadWV()"><span class="states-tooltip"></span></div>
+            <div class="state-circles" id="md" onmouseover="loadMD()"><span class="states-tooltip">Brian Kleist</span></div>
+            <div class="state-circles" id="de" onmouseover="loadDE()"><span class="states-tooltip"></span></div>
+
+            <div class="state-circles" id="va" onmouseover="loadVA()"><span class="states-tooltip"></span></div>
+            @*<div class="state-circles" id="va2" onmouseover="loadVA()"><span class="states-tooltip"></span></div>*@
+
+            <div class="state-circles" id="nc" onmouseover="loadNC()"><span class="states-tooltip">Sid Witmer</span></div>
+            <div class="state-circles" id="sc" onmouseover="loadSC()"><span class="states-tooltip">Sid Witmer</span></div>
+
+
+            <!-- end states map textbox -->
+        </div>
+        <!-- end states map -->
+    </div>
+    <!-- end states grid -->
+</div>
+<!-- end states container-->
+@*
+    <div class="perspective-container">
+
+        <div></div>
+
+    </div>
+*@
+
+
+
+@*<div class="img-clip-block">
+        <div class="img-clip-row">
+            <div class="img-clip-wrap">
+            </div>
+        </div>
+
+        <div class="img-clip-row">
+
+            <a href="" class="img-clip-wrap">
+                <div class="overlay-diamond">
+                    <div class="overlay-diamond-content">left</div>
+                </div>
+            </a>
+
+            <a href="" class="img-clip-wrap">
+                <div class="overlay-diamond">
+                    <div class="overlay-diamond-content">right</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="img-clip-row">
+            <a href="" class="img-clip-wrap polygon-clip-rhombus">
+                <div class="overlay-diamond">
+                    <div class="overlay-diamond-content">bottom</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <svg class="clip-svg">
+        <defs>
+            <clipPath id="clip-diamond-demo" clipPathUnits="objectBoundingBox">
+                <polygon points="0.5 0, 1 0.5, 0.5 1, 0 0.5" />
+            </clipPath>
+        </defs>
+    </svg>*@
+
+
+
+
+<!-- This is the textbox inside the map -->
+@*<div class="states-map-textbox">
+
+        <ul id="NY-text">
+            <li>
+                <h1>New York</h1>
+            </li>
+            <li>
+                <p></p>
+            </li>
+        </ul>
+        <ul id="PA-text">
+            <li>
+                <h1>Pennsylvainia</h1>
+            </li>
+            <li>
+                <p>Whitney Brady</p>
+            </li>
+            <li>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+            </li>
+            <li>
+                <p></p>
+            </li>
+        </ul>
+        <ul id="OH-text">
+            <li>
+                <h1>Ohio</h1>
+            </li>
+            <li>
+                <p></p>
+            </li>
+        </ul>
+        <ul id="WV-text">
+            <li>
+                <h1>West Virgina</h1>
+            </li>
+            <li>
+                <p></p>
+            </li>
+        </ul>
+        <ul id="MD-text">
+            <li>
+                <h1>Maryland</h1>
+            </li>
+            <li>
+                <p>Brian Kleist</p>
+            </li>
+        </ul>
+        <ul id="DE-text">
+            <li>
+                <h1>Delaware</h1>
+            </li>
+            <li>
+                <p></p>
+            </li>
+        </ul>
+        <ul id="VA-text">
+            <li>
+                <h1>Virgina</h1>
+            </li>
+            <li>
+                <p></p>
+            </li>
+        </ul>
+        <ul id="NC-text">
+            <li>
+                <h1>North Carolina</h1>
+            </li>
+            <li>
+                <p>Sid Witmer</p>
+            </li>
+        </ul>
+        <ul id="SC-text">
+            <li>
+                <h1>South Carolina</h1>
+            </li>
+            <li>
+                <p></p>
+            </li>
+        </ul>
+
+    </div>*@
+

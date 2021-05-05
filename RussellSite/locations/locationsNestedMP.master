@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="locationsNestedMP.master.cs" Inherits="RussellSite.locations.locationsNestedMP" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <style>
+        .hero-container {
+            height: 50px;
+        }
+        .hero-inner{
+            height: 0;
+            display: none;
+        }
+
+        #hero-img {
+            filter: brightness(100%);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center 60px;
+            background-image: url(../images/map3.png);
+            background-color: #6b9bdb;
+            background-attachment: scroll;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="nestedContent1" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div class="locations-navigation">
+        <!-- 1 -->
+        <h1>Locations</h1>
+        <ul>
+
+            <li><a href="./locations.aspx">Locations</a></li>
+            <li><a href="./akron.aspx">Akron</a></li>
+            <li><a href="./asheville.aspx">Asheville</a></li>
+            <li><a href="./baltimore.aspx">Baltimore</a></li>
+            <li><a href="./chambersburg.aspx">Chambersburg</a></li>
+            <li><a href="./erie.aspx">Erie</a></li>
+            <li><a href="./fayetteville.aspx">Fayetteville</a></li>
+            <li><a href="./greensboro.aspx">Greensboro</a></li>
+            <li><a href="./mars.aspx">Mars</a></li>
+            <li><a href="./mercer.aspx">Mercer</a></li>
+            <li><a href="./pittsburgh.aspx">Pittsburgh</a></li>
+            <li><a href="./reading.aspx">Reading</a></li>
+            <li><a href="./unioncity.aspx">UnionCity</a></li>
+            <li><a href="./wheelertown.aspx">WheelerTown</a></li>
+        </ul>
+    </div>
+
+    <asp:ContentPlaceHolder ID="nestedContent2" runat="server">
+    </asp:ContentPlaceHolder>
+
+</asp:Content>

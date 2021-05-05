@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Lake Erie Traffic Control";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#41b60b">
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap" rel="stylesheet">      <!-- montserrat -->
+    <link href="@Url.Content("~/Content/Reset.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Main.css")" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="@Url.Content("~/images/LETC_fav.png")" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="navbar-container clearfix" id="navbar-container">
+
+        <div class="navbar-title">
+            @Html.ActionLink(" ", "Index", "Home")
+        </div>
+
+
+        <div class="navigation-container clearfix" id="navigation-container">
+            <ul>
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Shop", "shop", "Home")</li>
+                <li>@Html.ActionLink("About", "about", "Home")</li>
+                <li>@Html.ActionLink("Contact", "contact", "Home")</li>
+                @*<li>@Html.ActionLink("Innovation", "Innovation", "Home", null, new { @class = "button-pretty fade-in-left" })</li>*@
+            </ul>
+        </div>
+
+        <ul class="navbar">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("Shop", "shop", "Home")</li>
+            <li>@Html.ActionLink("About", "about", "Home")</li>
+            <li>@Html.ActionLink("Contact", "contact", "Home")</li>
+        </ul>
+
+        <div id="hamburger-container" class="hamburger-container">
+            <div class="hamburger-inner" onclick="functionHamburgerMenu(this)" title="navigation">
+                <div class="hamburger icon-hamburger">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    @RenderBody()
+
+
+<div class="footer-info">
+    <p>Copyright &copy; Lake Erie Traffic Control</p>
+    <p>All information is current as of: @DateTime.Now</p>
+</div>
+
+    <script type="text/javascript" src="~/Content/Script.js"></script>
+</body>
+</html>

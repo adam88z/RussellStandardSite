@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="productsNestedMP.master.cs" Inherits="RussellSite.products.productsNestedMP" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <style>
+        .hero-container {
+            height: auto;
+            min-height: inherit;
+        }
+
+        #hero-img {
+            display: none;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="nestedContent1" runat="server">
+    </asp:ContentPlaceHolder>
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div class="product-navigation clearfix">
+        <!-- 1 -->
+        <div class="products-header">
+            <h1>Products</h1>
+        </div>
+
+        <ul>
+            <li><a href="products.aspx">Products</a></li>
+            <li><a href="griptight.aspx">Grip-Tight</a></li>
+            <li><a href="co-ag1031.aspx">Co-Ag 1031</a></li>
+            <li><a href="fb-3.aspx">FB-3 Modified Wearing Course</a></li>
+            <li><a href="gsb-88.aspx">GSB-88</a></li>
+            <li><a href="polypave.aspx">PolyPave</a></li>
+            <li><a href="fibermat.aspx">FiberMat</a></li>
+            <li><a href="pass.aspx">Polymerized Asphalt Surface Sealer</a></li>
+            <li><a href="safetydatasheets.aspx">Safety Data Sheets</a></li>
+        </ul>
+    </div>
+
+    <asp:ContentPlaceHolder ID="nestedContent2" runat="server">
+    </asp:ContentPlaceHolder>
+
+</asp:Content>
+

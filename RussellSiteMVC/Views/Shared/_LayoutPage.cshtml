@@ -1,0 +1,312 @@
+﻿@{
+    ViewBag.Title = "Russell Standard Corporation";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="google-site-verification" content="EL95xEk2TncSzq310VOnFu93fl_GIcMbX_E8mDJUrmo" />
+    @*<meta http-equiv="refresh" content="240"> Refreshes webpage every 240 seconds*@
+    @*@RenderSection("Content", false)*@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#41b60b">
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">    <!-- montserrat -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">   <!-- open sans -->
+    <link href="@Url.Content("~/Content/Reset.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Main.css")" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="@Url.Content("~/Content/Images/trademarks/trademark_thumbs/favicon.png")" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="master-container">
+        <!-- used for grid layout -->
+        <!-- overlay when the navigation is toggled -->
+        <div id="overlay" class="overlay"></div>
+
+        <div class="cookies-warning-container">
+
+            <div class="cookies-warning">
+                <p>
+                    In accordance with the EU e-privacy directive. We are required to
+                    inform users about storing cookiees locally in your browser. If you do not want cookies to be stored locally
+                    on your browser, please select "Decline".
+                </p>
+            </div>
+
+        </div>
+
+        <div class="navbar-container" id="navbar-container">
+
+            <div class="navbar-title">
+                @*<img src="~/Content/Images/trademarks/Russell-logo.svg" />*@
+                @Html.ActionLink(" ", "Index", "Home")
+            </div>
+
+            <nav class="navbar">
+
+                <ul>
+                    <li id="navbar-home-link">@Html.ActionLink("Home", "Index", "Home")</li>
+
+                    <li id="navbar-li1">
+                        @Html.ActionLink("Russell Standard", "Index", "Home")
+                        <ul>
+                            <li>@Html.ActionLink("About", "AboutRussell", "Home")</li>
+                            <li>@Html.ActionLink("History", "History", "Home")</li>
+                            <li>@Html.ActionLink("Careers", "Careers", "Home")</li>
+                            <li>@Html.ActionLink("Products", "Index", "Products")</li>
+                            <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
+                            <li>@Html.ActionLink("SDS Sheets", "SafetyDataSheets", "Products")</li>
+                            <li>@Html.ActionLink("Members", "Members", "Home")</li>
+                        </ul>
+                    </li>
+
+                    <li id="navbar-li2">
+                        @Html.ActionLink("Hammaker East", "HammakerEast", "Home")
+                        <ul>
+                            @*<li>@Html.ActionLink("HammakerEast", "HammakerEast", "Home")</li>*@
+                            <li>@Html.ActionLink("Careers", "Careers", "Home")</li>
+                        </ul>
+                    </li>
+
+                    @*<li id="navbar-li3">
+                        @Html.ActionLink("Sterlingwood", "Sterlingwood", "Home")
+                        <ul id="navbar-drop-last">
+                            <li>@Html.ActionLink("Sterlingwood", "Sterlingwood", "Home")</li>
+                            <li>@Html.ActionLink("Careers", "Careers", "Home")</li>
+                        </ul>
+                    </li>*@
+
+                    @*<li id="navbar-li4">
+                        
+                    </li>*@
+                </ul>
+
+                <div class="navbar-login-div">
+                    @{
+                        string loginDisplayText = User.Identity.Name ?? "Login";
+                        if (User.Identity.Name == null || User.Identity.Name == "")
+                        {
+                            loginDisplayText = "Login";
+                        }
+                    }
+
+                    @*<p style="font-size: 14px; position:absolute; top: 14px; right: 14px; filter: opacity(60%);">&#128100;     &#128101;</p>*@
+                    @*filter: grayscale(100%) brightness(80%) sepia(100%) hue-rotate(40deg) saturate(1000%) contrast(0.8);*@
+
+                    @*@if (User.Identity.IsAuthenticated != true)
+        {
+            @Html.ActionLink(HttpUtility.HtmlDecode("&#128100;"), "Login", "Home", null, new
+            {
+                @Class = "navbar-login",
+                id = "navbar-login",
+                style = "" +
+            " text-align: center; "
+            })
+        }*@
+
+                    @if (User.Identity.IsAuthenticated != true) // if user not authenticated display this.
+                    {
+                        @Html.ActionLink(loginDisplayText, "Login", "Home", null, new
+                        {
+                            @Class = "navbar-not-loggedin",
+                            id = "navbar-not-loggedin"
+                        })
+                    }
+
+                    @if (User.Identity.IsAuthenticated == true) // if user is authenticated display their initials
+                    {
+                        string currentuser = HttpContext.Current.User.Identity.Name.ToString();
+                        char[] charArray = currentuser.ToCharArray();
+                        char[] charArray2 = currentuser.Split('.').Last().ToCharArray();
+                        string Finitial = charArray[0].ToString();
+                        string Linitial = charArray2[0].ToString();
+                        string initials = Finitial + Linitial;
+                        @Html.ActionLink(initials.ToUpper(), "Login", "Home", null, new
+                        {
+                            @Class = "navbar-loggedin",
+                            id = "navbar-loggedin"
+                        })
+
+                        <ul id="hiddenusermenu">
+                            <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                            <li>@Html.ActionLink("Settings", "Settings", "Home")</li>
+                        </ul>
+                    }
+                </div>
+
+                <div id="hamburger-container" class="hamburger-container">
+                    <div class="hamburger-inner" onclick="functionHamburgerMenu(this)" title="navigation">
+                        <div class="hamburger icon-hamburger">
+                        </div>
+                    </div>
+                </div>
+
+            </nav>
+
+            <div class="navigation-container clearfix" id="navigation-container">
+                <ul>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Hammaker East", "HammakerEast", "Home")</li>
+                    @*<li>@Html.ActionLink("Sterlingwood", "Sterlingwood", "Home")</li>*@
+                    <li>@Html.ActionLink("About", "AboutRussell", "Home")</li>
+                    <li>@Html.ActionLink("History", "History", "Home")</li>
+                    <li>@Html.ActionLink("Careers", "Careers", "Home")</li>
+                    <li>@Html.ActionLink("Products", "Index", "Products")</li>
+                    <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
+                    <li>@Html.ActionLink("Safety Data Sheets", "SafetyDataSheets", "Products")</li>
+
+                    @*<li>@Html.ActionLink("Innovation", "Innovation", "Home")</li>
+        <li>@Html.ActionLink("Vision", "Vision", "Home")</li>
+        <li>@Html.ActionLink("Growth", "Growth", "Home")</li>
+        <li>@Html.ActionLink("Environment", "Environment", "Home")</li>
+        <li>@Html.ActionLink("Safety", "Safety", "Home")</li>
+        <li>@Html.ActionLink("Trust", "Trust", "Home")</li>*@
+
+                    <li>@Html.ActionLink("Members", "Members", "Home")</li>
+                </ul>
+            </div>
+        </div>
+        <!-- end navbar container -->
+
+        @RenderBody()
+
+        <div class="footer-nav-wrapper clearfix">
+
+            <div class="footer-nav clearfix" id="footer-nav">
+                <ul class="footer-nav-large clearfix">
+                    <li>
+                        <p>Russell Standard</p>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("About", "AboutRussell", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("History", "History", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Products", "Index", "Products")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Locations", "Index", "Locations")
+                    </li>
+                </ul>
+                <ul class="footer-nav-large">
+                    <li>
+                        <p>Hammaker East</p>
+                    </li>
+                    <li>@Html.ActionLink("Hammaker East", "HammakerEast", "Home")</li>
+                </ul>
+                <ul class="footer-nav-large">
+                    <li>
+                        <p>Careers</p>
+                    </li>
+                    <li>@Html.ActionLink("Careers", "Careers", "Home")</li>
+
+                </ul>
+                @*<ul class="footer-nav-large">
+
+
+            <li>
+                <p>SterlingWood</p>
+            </li>
+            <li>@Html.ActionLink("Sterlingwood", "Sterlingwood", "Home")</li>
+            <li>@Html.ActionLink("About Sterlingwood", "Sterlingwood", "Home")</li>
+            <li>@Html.ActionLink("Careers Sterlingwood", "Sterlingwood", "Home")</li>
+
+        </ul>*@
+                <ul class="footer-nav-large">
+                    <li>
+                        <p>Other</p>
+                    </li>
+                    <li>@Html.ActionLink("Members", "Members", "Home")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Home")</li>
+
+                </ul>
+
+                <div class="footer-nav-small">
+                    <ul>
+                        <li>
+                            <p>Russell Standard</p>
+                            <ul id="fna-1">
+                                <li>
+                                    @Html.ActionLink("Home", "Index", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("About", "AboutRussell", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("History", "History", "Home")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Products", "Index", "Products")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Locations", "Index", "Locations")
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Hammaker East</p>
+                            <ul id="fna-2">
+                                <li>@Html.ActionLink("Hammaker East", "HammakerEast", "Home")</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Careers</p>
+                            <ul id="fna-3">
+                                <li>@Html.ActionLink("Careers", "Careers", "Home")</li>
+                            </ul>
+                        </li>
+                        @*<li>
+                    <p>SterlingWood</p>
+                    <ul id="fna-3">
+                        <li>@Html.ActionLink("Sterlingwood", "Sterlingwood", "Home")</li>
+                        <li>@Html.ActionLink("About Sterlingwood", "Sterlingwood", "Home")</li>
+                        <li>@Html.ActionLink("Careers Sterlingwood", "Sterlingwood", "Home")</li>
+                    </ul>
+                </li>*@
+                        <li>
+                            <p>Other</p>
+                            <ul id="fna-4">
+                                <li>@Html.ActionLink("Members", "Members", "Home")</li>
+                                <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- End footer nav-->
+
+            <div class="social-icons" id="social-icons">
+                <a href="https://www.linkedin.com/company/russell-standard-corporation"><i title="linkedin" class="icon-linkedin"></i></a>
+                <a href="https://www.facebook.com/russellstandardcorporation"><i title="facebook" class="icon-facebook"></i></a>
+                <a href="https://twitter.com/russstandcorp"><i title="twitter" class="icon-twitter"></i></a>
+            </div>
+
+            <div class="footer-info">
+                <p>Copyright &copy; Russell Standard Corporation</p>
+                <p>All information is current as of: @DateTime.Now</p>
+            </div>
+
+            @*<div id="secureseal"> works great Desktop. NOT WORKING ON MOBILE!!!
+                    <script id="godaddy-security-s" src="https://cdn.sucuri.net/badge/badge.js" data-s="204" data-i="9f4ff2bec3b2dad6bfe20c8ac187cc8b0d0b43ca70" data-p="o" data-c="l" data-t="g"></script>
+                </div>*@
+
+        </div><!-- End footer nav wrapper-->
+
+        <script type="text/javascript" src="~/Content/Script.js"></script>
+
+    </div><!-- end master container-->
+
+</body>
+</html>
+
+
+

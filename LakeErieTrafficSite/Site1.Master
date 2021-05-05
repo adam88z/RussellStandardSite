@@ -1,0 +1,174 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.Master.cs" Inherits="LakeErieTrafficSite.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Lake Erie Traffic Control</title>
+
+        <!-- Google jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+
+
+    <link href="<%=ResolveUrl("./css/reset.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%=ResolveUrl("./css/main.css")%>" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="<%=ResolveUrl("./images/LETC_fav.png")%>" />
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+
+    <form id="form1" runat="server">
+
+                <div class="master-container">  <!-- used for grid layout -->
+
+
+         <div class="hero-container">
+
+            <div class="navbar-container clearfix" id="navbar-container">
+
+                <div class="navbar-title">
+                    <a title="home" href="<%=ResolveUrl("./default.aspx")%>"></a>
+                </div>
+
+
+                <div class="navigation-container clearfix" id="navigation-container">
+                    <ul>
+                        <li><a href="<%=ResolveUrl("./Default.aspx")%>">Home</a></li>
+
+                         <%--
+                        <li><a href="<%=ResolveUrl("./Data.aspx")%>">Data</a></li>
+                            --%>
+                          
+                    </ul>
+                </div>
+
+                <div class="hamburger" onclick="functionHamburgerMenu(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                </div>
+
+
+                <ul class="navbar">
+                    <%--<li><a href="<%=ResolveUrl("./Default.aspx")%>">Home</a></li>
+
+                    <li id="navbar-li1">
+                        <a href="<%=ResolveUrl("./Default.aspx")%>" id="nav-link1">Sales</a>
+                        <ul>
+                            <li><a href="<%=ResolveUrl("./Default.aspx")%>">Sales</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li id="navbar-li2">
+                        <a href="<%=ResolveUrl("./Services.aspx")%>" id="nav-link2">Services</a>
+                        <ul>
+                            <li><a href="<%=ResolveUrl("./Services.aspx")%>">Services</a></li>
+                        </ul>
+                    </li>
+
+                    <li id="navbar-li3">
+                        <a href="<%=ResolveUrl("./Rentals.aspx")%>" id="nav-link3">Rentals</a>
+                        <ul id="navbar-drop-last">
+                            <li><a href="<%=ResolveUrl("./Rentals.aspx")%>">Rentals</a></li>
+                        </ul>
+                    </li>--%>
+                </ul>
+
+            </div>
+            <div class="hero-inner" id="hero-img">
+            </div>
+        </div>
+
+</div><!-- End master container used for grid layout -->
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+        <div class="global-wrapper footer-nav-wrapper clearfix">
+
+            <div class="global-container footer-nav clearfix" id="footer-nav">
+<%--
+                <ul class="footer-nav-large clearfix">
+                    <li>
+                        <p>Home</p>
+                    </li>
+                            <li><a href="<%=ResolveUrl("./Default.aspx")%>">Home</a></li>
+                </ul>
+                <ul class="footer-nav-large">
+                    <li><p>Home</p></li>
+                            <li><a href="<%=ResolveUrl("./Default.aspx")%>">Home</a></li>
+                </ul>
+                <ul class="footer-nav-large">
+
+
+                    <li><p>Home</p></li>
+                            <li><a href="<%=ResolveUrl("./Default.aspx")%>">Home</a></li>
+
+                </ul>
+                <ul class="footer-nav-large">
+                    <li>
+                        <p>Other</p>
+                    </li>
+                            <li><a href="<%=ResolveUrl("./Default.aspx")%>">Home</a></li>
+
+                    
+                </ul>
+
+                <div class="footer-nav-small">
+                    <ul>
+                        <li>
+                            <p>Home</p>
+                            <ul id="fna-1">
+                            <li><a href="<%=ResolveUrl("./Default.aspx")%>">Home</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Home</p>
+                            <ul id="fna-2">
+                            <li><a href="<%=ResolveUrl("./Default.aspx")%>">Home</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Home</p>
+                            <ul id="fna-3">
+                            <li><a href="<%=ResolveUrl("./Default.aspx")%>">Home</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p>Other</p>
+                            <ul id="fna-4">
+                            <li><a href="<%=ResolveUrl("./Default.aspx")%>">Home</a></li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>--%>
+
+
+                
+
+
+            </div>
+
+                <div class="footer-info">
+                    <p>Copyright &copy Lake Erie Traffic Control</p>
+
+                    <p>All information is current as of: <span id="footer-date"></span></p> 
+                </div>
+        </div>
+
+    <script type="text/javascript" src="<%=ResolveUrl("./javascript/script.js")%>"></script>
+
+    </form>
+    <script id="godaddy-security-s" src="https://cdn.sucuri.net/badge/badge.js" data-s="206" data-i="6df4e39b10cffbf68b93311152ca6f051525a89935" data-p="r" data-c="l" data-t="g"></script>
+</body>
+</html>

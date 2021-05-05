@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+    <div class="product-navigation clearfix">
+        <!-- 1 -->
+        <div class="products-header">
+            <h1>Products</h1>
+        </div>
+
+        <ul>
+            <li>@Html.ActionLink("Products", "Index", "Products")</li>
+            <li>@Html.ActionLink("Grip-Tight", "griptight", "Products")</li>
+            <li>@Html.ActionLink("Coag1031", "Coag1031", "Products")</li>
+            <li>@Html.ActionLink("Flex Base", "fb3", "Products")</li>
+            <li>@Html.ActionLink("Gsb88", "gsb88", "Products")</li>
+            <li>@Html.ActionLink("Jasa HP", "jasahp", "Products")</li>
+            <li>@Html.ActionLink("Polypave", "polypave", "Products")</li>
+            <li>@Html.ActionLink("FiberMat", "fibermat", "Products")</li>
+            <li>@Html.ActionLink("Pass", "pass", "Products")</li>
+            <li>@Html.ActionLink("SafetyDataSheets", "SafetyDataSheets", "Products")</li>
+        </ul>
+    </div>
+
+    @RenderBody()

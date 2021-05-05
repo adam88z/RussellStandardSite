@@ -1,0 +1,27 @@
+﻿.navbar-title {
+    margin: 4px 0 0 4px;
+    width: 60px;
+    background: url("../images/sw.png") center no-repeat;
+    background-size: contain;
+}
+.navbar-title > a {
+    display: none;
+}
+#navbar-li1, #navbar-li2, #nav-link1, #nav-link2 {
+    display: none;
+}
+.career-sw-flexbox {
+    margin-bottom: 0px;
+}
+.career-he-flexbox-wrapper > p, .career-sw-flexbox-wrapper > p {
+    border-top: none;
+    padding-top: 30px;
+}
+.sticky .navbar-title {
+    background-color: rgba(255,255,255,1);
+}
+@media screen and (min-width: 600px) {
+    #navbar-li3, #nav-link3 {
+        display: inline-block;
+    }
+}

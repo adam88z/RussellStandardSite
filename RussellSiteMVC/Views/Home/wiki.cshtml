@@ -1,0 +1,483 @@
+﻿
+@{
+    ViewBag.Title = "wiki";
+    //Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="google-site-verification" content="EL95xEk2TncSzq310VOnFu93fl_GIcMbX_E8mDJUrmo" />
+    @*<meta http-equiv="refresh" content="240"> Refreshes webpage every 240 seconds*@
+    @*@RenderSection("Content", false)*@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#41b60b">
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">    <!-- montserrat -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">   <!-- open sans -->
+    <link href="@Url.Content("~/Content/Reset.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Main.css")" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="@Url.Content("~/Content/Images/trademarks/trademark_thumbs/favicon.png")" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div class="master-container">
+
+        <div class="members-sidebar">
+            <ul>
+                <li>
+                    <a target="_blank" rel="noopener noreferrer" href="https://russellstandard.freshservice.com/support/home">IT Helpdesk</a>
+                </li>
+                <li>
+                    <a target="_blank" rel="noopener noreferrer" href="https://russellstandard.freshservice.com/support/home">HR Helpdesk</a>
+                </li>
+                <li>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.paychex.com/login">Paychex</a>
+                </li>
+                <li>
+                    <a target="_blank" rel="noopener noreferrer" href="https://plansource.com/">Plansource</a>
+                </li>
+                <li>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.dropbox.com/login?cont=https%3A%2F%2Fwww.dropbox.com%2Faccount%2Fsecurity">Dropbox</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="members-account-container">
+            <h2>@System.Web.HttpContext.Current.User.Identity.Name</h2>
+            <ul>
+                <li>@Html.ActionLink("Logout", "Logout", "Home", new { @class = "asp-button-link" })</li>
+                <li>@Html.ActionLink("Settings", "Settings", "Home", new { @class = "asp-button-link" })</li>
+
+                @if (ViewBag.IsAdmin != null)
+                {
+                    <li>@Html.ActionLink("Users", "Users", "Home", new { @class = "asp-button-link", id = "users-link" })</li>
+                }
+
+            </ul>
+        </div>
+
+        <div class="members-items-container">
+            <div class="members-items-header">
+                <h1>Welcome!</h1>
+                <h2>Employee portal</h2>
+                <input type="file"  title="hey" />
+            </div>
+
+            <div class="members-items-right">
+                <iframe src="https://calendar.google.com/calendar/embed?title=RSC%2FHE%20Company%20Calendar&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=russellstandardcorp%40gmail.com&amp;color=%23182C57&amp;src=cb7khtdoohg47roae42gsbojbo%40group.calendar.google.com&amp;color=%23AB8B00&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%230D7813&amp;ctz=America%2FNew_York]]"></iframe>
+                @*<iframe src="http://10.0.0.46/index.php?kSide=a810030edd6bc08cf01a02b609151ba2" style="width: 400px; height: 200px;"></iframe>*@
+                <style>
+                    iframe > #container {
+                        background: red;
+                        padding: 100px;
+                        display: none;
+                    }
+                </style>
+            </div>
+        </div>
+        <div class="members-imagepanel">
+            <img style="height: 400px;" src="~/Content/Images/huddle_stuff/pic.jpg" alt="" />
+            <img style="height: 400px;" src="~/Content/Images/huddle_stuff/pic2.jpg" alt="" />
+            <img style="height: 400px;" src="~/Content/Images/huddle_stuff/pic3.jpg" alt="" />
+        </div>
+        <div class="members-imagepanel">
+            <img style="height: 200px;" src="~/Content/Images/dos2019_30.jpg" alt="" />
+            <img style="height: 200px;" src="~/Content/Images/corp-dos-group.jpg" alt="" />
+            <img style="height: 200px;" src="~/Content/Images/rail.jpg" alt="" />
+        </div>
+
+        <div class="employee-forms-container">
+            <h2>Human resources forms</h2>
+            <ul>
+                <li onclick="accordion(this)" class="accordion clearfix">
+                    <div class="accordion-title"><p>Employee Forms</p><i class="icon-accordion-down"></i></div>
+
+                    <ul class="clearfix">
+                        <li>
+                            <p>address change form.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/address_change_form.pdf">
+                                <img src="~/Content/Images/hr/address_change_form.jpg" alt="address change form" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>business travel expense.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/business_travel_expense.pdf">
+                                <img src="~/Content/Images/hr/business_travel_expense.jpg" alt="business_travel_expense" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>conf employee assistance program.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/conf_employee_assistance_program.pdf">
+                                <img src="~/Content/Images/hr/conf_employee_assistance.jpg" alt="conf_employee_assistance_program" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>copy of 2017 training workbook.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/copy_of_2017_training_workbook.pdf">
+                                <img src="~/Content/Images/hr/2017_training_workbook.jpg" alt="2017_training_workbook" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>corporate credit card.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/corporate_credit_card.pdf">
+                                <img src="~/Content/Images/hr/corporate_credit_card.jpg" alt="corporate_credit_card" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>direct deposit.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/direct_deposit.pdf">
+                                <img src="~/Content/Images/hr/direct_deposit.jpg" alt="direct_deposit" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>ee registration instructions.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/ee_registration_instructions.pdf">
+                                <img src="" alt="ee_registration_instructions" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>employee corrective action.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/employee_corrective_action.pdf">
+                                <img src="~/Content/Images/hr/employee_corrective_action.jpg" alt="employee_corrective_action" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>expense report online approval.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/expense_report_online_approval.pdf">
+                                <img src="~/Content/Images/hr/expense_report_approval.jpg" alt="expense_report_online_approval" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>expense report online entry.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/expense_report_online_entry.pdf">
+                                <img src="~/Content/Images/hr/expense_report_entry.jpg" alt="expense_report_online_entry" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>local earned income tax withholding form.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/local_earned_income_tax_withholding_form.pdf">
+                                <img src="~/Content/Images/hr/local_earned_income_tax.jpg" alt="local_earned_income_tax_withholding_form" />
+                            </a>
+                        </li>
+
+                        <li>
+                            <p>matching gift request.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/matching_gift_request.pdf">
+                                <img src="~/Content/Images/hr/matching_gift_request.jpg" alt="matching_gift_request" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>new hire packet sign-off.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/new_hire_packet_sign-off.pdf">
+                                <img src="~/Content/Images/hr/new_hire_packet_sign-off.jpg" alt="new_hire_packet_sign-off" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>paychex flex mobile app employee.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/paychex_flex_mobile_app_employee.pdf">
+                                <img src="" alt="paychex_flex_mobile_app_employee" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>personal protective equipment.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/personal_protective_equipment.pdf">
+                                <img src="~/Content/Images/hr/personal_protective_equipme.jpg" alt="personal_protective_equipment" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>ppe safety glasses.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/ppe_safety_glasses.pdf">
+                                <img src="~/Content/Images/hr/ppe_safety_glasses.jpg" alt="ppe_safety_glasses" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>pto approval form.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/pto_approval_form.pdf">
+                                <img src="~/Content/Images/hr/pto_approval_form.jpg" alt="pto_approval_form" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>quarterly touch base for employee.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/quarterly_touch_base_for_employee.pdf">
+                                <img src="~/Content/Images/hr/quarterly_touch_base_emp.jpg" alt="quarterly_touch_base_for_employee" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>quarterly touch base for manager.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/quarterly_touch_base_for_manager.pdf">
+                                <img src="~/Content/Images/hr/quarterly_touch_base_man.jpg" alt="quarterly_touch_base_for_manager" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>view personal and payroll information.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/view_personal_and_payroll_information.pdf">
+                                <img src="" alt="view_personal_and_payroll_information" />
+                            </a>
+                        </li>
+                        <li>
+                            <p>w4 form.pdf</p>
+                            <a target="_blank" rel="noopener noreferrer" href="~/Content/Documents/hr/w4_form.pdf">
+                                <img src="~/Content/Images/hr/w4_form.jpg" alt="w4_form" />
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li onclick="accordion(this)" class="accordion clearfix">
+                    <div class="accordion-title"><p>HR Forms</p><i class="icon-accordion-down"></i></div>
+                    <ul>
+                        <li>content</li>
+                    </ul>
+                </li>
+
+                <li onclick="accordion(this)" class="accordion clearfix">
+                    <div class="accordion-title"><p>Safety Forms</p><i class="icon-accordion-down"></i></div>
+                    <ul>
+                        <li>content</li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <script type="text/javascript" src="~/Content/Script.js"></script>
+    </div>@*master container*@
+</body>
+</html>
+
+
+
+
+
+
+@*<div class="database-connection-box">
+        <div class="data-connection-buttons">
+                <asp:button id="dbconnect" runat="server" text="connect to database" onclick="dbconnect_click" />
+                <asp:button id="dbdisconnect" runat="server" text="disconnect from database" onclick="dbdisconnect_click" />
+                <asp:label id="lblindicator" runat="server" text="database connection"></asp:label>
+            </div>
+
+        <div class="data">
+            <asp:GridView ID="GridView1" runat="server" CssClass="gridview"></asp:GridView>
+        </div>
+    </div>
+
+
+    <div class="data-header">
+        <h1>Safety</h1>
+    </div>
+
+    <div class="data-form-container">
+
+        <div class="data-table-container">
+            <div class="data-table-container-header">
+                <p>Enter Your Name:</p>
+                <asp:TextBox ID="txtName" runat="server" CssClass="data-table-container-textbox"></asp:TextBox>
+            </div>
+
+            <table style="width: 100%" class="data-table">
+
+                <tr>
+                    <th>Categories</th>
+                    <th>Ok</th>
+                    <th>Defect</th>
+                    <th>Notes</th>
+                </tr>
+
+                <tr>
+                    <td>Horn/Back-up Alarm:</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList1" runat="server">
+                            <asp:ListItem Enabled="true" Text="" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="Yes" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="No" Value=""></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtHornOk" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtHornDefect" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtHornNotes" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Seatbelt:</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList2" runat="server">
+                            <asp:ListItem Enabled="true" Text="" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="Yes" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="No" Value=""></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtSeatbeltOk" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtSeatbeltDefect" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtSeatbeltNotes" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Light/Strobe/Beacon Light:</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList3" runat="server">
+                            <asp:ListItem Enabled="true" Text="" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="Yes" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="No" Value=""></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtLightsOk" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtLightsDefect" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtLightsNotes" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Brakes/Parking Brake:</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList4" runat="server">
+                            <asp:ListItem Enabled="true" Text="" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="Yes" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="No" Value=""></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtBrakesOk" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtBrakesDefect" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtBrakesNotes" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Steering Controls:</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList5" runat="server">
+                            <asp:ListItem Enabled="true" Text="" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="Yes" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="No" Value=""></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtSteeringOk" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtSteeringDefect" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtSteeringNotes" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mirros:</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList6" runat="server">
+                            <asp:ListItem Enabled="true" Text="" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="Yes" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="No" Value=""></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtMirrorsOk" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtMirrorsDefect" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtMirrorsNotes" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fire Extinguisher:</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList7" runat="server">
+                            <asp:ListItem Enabled="true" Text="" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="Yes" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="No" Value=""></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtFireExtinguisherOk" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtFireExtinguisherDefect" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtFireExtinguisherNotes" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ROPS (Roll Over Protection):</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList8" runat="server">
+                            <asp:ListItem Enabled="true" Text="" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="Yes" Value=""></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="No" Value=""></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtROPSOk" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtROPSDefect" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtROPSNotes" CssClass="custom-data-textbox" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="data-form3">
+            <ul>
+                    <li>
+                        <p>Ready </p>
+                        <asp:CheckBox ID="CheckBox1" runat="server" />
+                    </li>
+                    <li>
+                        <p>Not Ready</p>
+                        <asp:CheckBox ID="CheckBox2" runat="server" />
+                    </li>
+                </ul>
+            <div class="custom-data">
+                <asp:Button ID="submitAll" CssClass="custom-data-button" runat="server" Text="Submit All" OnClick="submitAll_Click" />
+                <asp:Button ID="clearButton" CssClass="custom-data-button" runat="server" Text="Clear Fields" OnClick="clearButton_Click" />
+            </div>
+        </div>
+
+    </div>*@
+
+<!-- End data form container -->
+<!-- JSON and XML-->
+@*<div style="grid-column: 1 / -1; text-align:center;">
+        <div id="send" onclick="sendData()">
+            <p>send</p>
+        </div>
+        <div id="recieve" onclick="recieveData()">
+            <p>recieve</p>
+        </div>
+        <div id="clear-local-storage" onclick="clearLocalStorage()">
+            <p>clear</p>
+        </div>
+
+        <div id="xmlData" onclick="xmlRequest()">
+            <p>click me to make an XML request</p>
+        </div>
+    </div>*@
+
+
+

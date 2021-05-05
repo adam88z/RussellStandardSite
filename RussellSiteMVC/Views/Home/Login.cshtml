@@ -1,0 +1,91 @@
+﻿@model RussellSiteMVC.Models.MyDatabaseDBContext
+
+@*@model IEnumerable<RussellSiteMVC.Models.User>*@
+@*@model RussellSiteMVC.Models.Person*@
+
+@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<div class="hero-container" style="height: 500px; position: relative; grid-column: 1 / -1; height: 100vh;">
+    <div class="hero-inner" id="hero-img" style="background:linear-gradient(to top right, rgba(0,0,0,6),rgba(0,0,0,.6)), url(../Content/Images/dos2019_60.jpg) center no-repeat; 
+background-size: cover;">
+
+        <div style=" display: none;
+        background: linear-gradient(to top, rgba(0,0,0,0),rgba(242, 253, 255, 0.30), rgba(232, 252, 255, 0.60), rgba(232, 252, 255, 0.80), rgb(201, 220, 226) ), 
+        url(../Content/Images/pexels/modern4.jpg) center no-repeat; 
+            background-size: cover; 
+            filter: opacity(.6) brightness(110%);
+            clip-path: polygon(0px 0px, 100% 0px, 63% 63%, 50% 100%, 0px 100%);
+            width: 30%; 
+            height: 100vh;
+            position: absolute;
+            left: 0; 
+            top: 0;">
+        </div>
+
+    </div>
+</div>
+
+<div class="login-wrapper">
+    <div class="login-grid">
+
+        <div class="login-styles-wrapper clearfix">
+
+            @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+            {
+                @Html.TextBoxFor(model => model.Username, new { @class = "login-styles", placeholder = "Username" })
+                @Html.ValidationMessageFor(model => model.Username, null, new { @Class = "login-authentication-message" })
+                @Html.PasswordFor(model => model.Password, new { @class = "login-styles", placeholder = "Password", })
+                @Html.ValidationMessageFor(model => model.Password, null, new { @Class = "login-authentication-message" })
+                <input type="submit" value="Login" class="login-styles-button" />
+            }
+        </div>
+        @*<form action="~/" method="POST">
+            <input type="text" name="UN" placeholder="Username" value="@Model.Username" class="login-styles" />
+            <input type="password" name="PW" placeholder="Password" value="@Model.Password" class="login-styles" />
+        </form>*@
+
+        @*<p style="font-size: 40px;">&#128274;</p>Lock Icon*@
+
+
+
+        @*<table>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                </tr>
+            }
+        </table>*@
+
+        @*@Request.IsAuthenticated*@
+
+    </div><!-- login grid -->
+
+</div><!-- login wrapper -->
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    ViewBag.Title = "Russell Standard Locations";
+}
+        <div class="locations-navigation">
+            <!-- 1 -->
+            <h1>Locations</h1>
+            <ul>
+
+                <li>@Html.ActionLink("Locations", "Index", "Locations")</li>
+                <li>@Html.ActionLink("Pittsburgh", "Pittsburgh", "Locations")</li>
+                <li>@Html.ActionLink("Akron", "Akron", "Locations")</li>
+                <li>@Html.ActionLink("Asheville", "Asheville", "Locations")</li>
+                <li>@Html.ActionLink("Baltimore", "Baltimore", "Locations")</li>
+                <li>@Html.ActionLink("Chambersburg", "Chambersburg", "Locations")</li>
+                @*<li>@Html.ActionLink("Erie", "Erie", "Locations")</li>*@
+                <li>@Html.ActionLink("Fayetteville", "Fayetteville", "Locations")</li>
+                <li>@Html.ActionLink("Greensboro", "Greensboro", "Locations")</li>
+                <li>@Html.ActionLink("Mars", "Mars", "Locations")</li>
+                <li>@Html.ActionLink("Mercer", "Mercer", "Locations")</li>
+
+                <li>@Html.ActionLink("Reading", "Reading", "Locations")</li>
+                @*<li>@Html.ActionLink("UnionCity", "UnionCity", "Locations")</li>
+        <li>@Html.ActionLink("WheelerTown", "WheelerTown", "Locations")</li>*@
+            </ul>
+        </div>
+        @RenderBody()
+   

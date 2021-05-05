@@ -1,0 +1,759 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B93E122F-6B0C-4A86-91A6-DAE8785269B7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RussellSiteMVC</RootNamespace>
+    <AssemblyName>RussellSiteMVC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Documents\sds\pdf_icon.PNG" />
+    <Content Include="Content\Images\a1.jpg" />
+    <Content Include="Content\Images\akron1.jpg" />
+    <Content Include="Content\Images\akron2.jpg" />
+    <Content Include="Content\Images\akron3.jpg" />
+    <Content Include="Content\Images\akron\IMG_2133.jpg" />
+    <Content Include="Content\Images\akron\IMG_2137.jpg" />
+    <Content Include="Content\Images\akron\IMG_7184.JPG" />
+    <Content Include="Content\Images\akron\IMG_7186.JPG" />
+    <Content Include="Content\Images\asheville\asheville1.jpg" />
+    <Content Include="Content\Images\asphalt_background.png" />
+    <Content Include="Content\Images\asphalt_background_600.png" />
+    <Content Include="Content\Images\asphalt_background_600_low.jpg" />
+    <Content Include="Content\Images\asphalt_background_nologo.png" />
+    <Content Include="Content\Images\backhoe-wide.jpg" />
+    <Content Include="Content\Images\backhoe.jpg" />
+    <Content Include="Content\Images\backhoe2.jpg" />
+    <Content Include="Content\Images\baltimore\IMG_1117.JPG" />
+    <Content Include="Content\Images\baltimore\IMG_1122.JPG" />
+    <Content Include="Content\Images\banner1.jpg" />
+    <Content Include="Content\Images\banner2.jpg" />
+    <Content Include="Content\Images\big-truck-2.jpg" />
+    <Content Include="Content\Images\big-truck.jpg" />
+    <Content Include="Content\Images\big-truck2.jpg" />
+    <Content Include="Content\Images\bigy.jpg" />
+    <Content Include="Content\Images\big_machine.jpg" />
+    <Content Include="Content\Images\bmore.jpg" />
+    <Content Include="Content\Images\bmore2.jpg" />
+    <Content Include="Content\Images\boat.jpg" />
+    <Content Include="Content\Images\boat2.jpg" />
+    <Content Include="Content\Images\boat3.jpg" />
+    <Content Include="Content\Images\boat4.jpg" />
+    <Content Include="Content\Images\brochures\bituminous-seal-coat.jpg" />
+    <Content Include="Content\Images\brochures\fiber-mat.jpg" />
+    <Content Include="Content\Images\brochures\flex-base.jpg" />
+    <Content Include="Content\Images\brochures\grip-tight.jpg" />
+    <Content Include="Content\Images\brochures\jasahp-light.jpg" />
+    <Content Include="Content\Images\brochures\manufacturing.jpg" />
+    <Content Include="Content\Images\brochures\overview.jpg" />
+    <Content Include="Content\Images\building1.jpg" />
+    <Content Include="Content\Images\chambersburg\finished-tank.jpg" />
+    <Content Include="Content\Images\chipper.jpg" />
+    <Content Include="Content\Images\city.jpg" />
+    <Content Include="Content\Images\city_large.jpg" />
+    <Content Include="Content\Images\control_panel.jpg" />
+    <Content Include="Content\Images\coolbg.svg" />
+    <Content Include="Content\Images\corp-dos-group.jpg" />
+    <Content Include="Content\Images\corp1.jpg" />
+    <Content Include="Content\Images\corp2.jpg" />
+    <Content Include="Content\Images\Corporate-group2.jpg" />
+    <Content Include="Content\Images\diamond-erie.jpg" />
+    <Content Include="Content\Images\diamond-waterford.jpg" />
+    <Content Include="Content\Images\diversity.jpg" />
+    <Content Include="Content\Images\dos2019_138.jpg" />
+    <Content Include="Content\Images\dos2019_161.jpg" />
+    <Content Include="Content\Images\dos2019_30.jpg" />
+    <Content Include="Content\Images\dos2019_30_wide.jpg" />
+    <Content Include="Content\Images\dos2019_60.jpg" />
+    <Content Include="Content\Images\dropbox.PNG" />
+    <Content Include="Content\Images\electricity1.jpg" />
+    <Content Include="Content\Images\electricity2.jpg" />
+    <Content Include="Content\Images\erie1.jpg" />
+    <Content Include="Content\Images\erie2.jpg" />
+    <Content Include="Content\Images\erie3.jpg" />
+    <Content Include="Content\Images\erie4.jpg" />
+    <Content Include="Content\Images\fayetteville\fayetteville1.JPG" />
+    <Content Include="Content\Images\fibermat\FiberMat1.jpg" />
+    <Content Include="Content\Images\fibermat\FiberMat2.jpg" />
+    <Content Include="Content\Images\fibermat\FiberMat4.jpg" />
+    <Content Include="Content\Images\fibermat\FiberMat5.jpg" />
+    <Content Include="Content\Images\freshservice.PNG" />
+    <Content Include="Content\Images\front_vehicle.jpg" />
+    <Content Include="Content\Images\greensboro\119.JPG" />
+    <Content Include="Content\Images\greensboro\124.JPG" />
+    <Content Include="Content\Images\greensboro\IMG_4874.JPG" />
+    <Content Include="Content\Images\grey-cubes.png" />
+    <Content Include="Content\Images\griptight\griptight1.jpg" />
+    <Content Include="Content\Images\griptight\griptight2.jpg" />
+    <Content Include="Content\Images\HE-homepage.jpg" />
+    <Content Include="Content\Images\he-logo.png" />
+    <Content Include="Content\Images\HE-vectorized.svg" />
+    <Content Include="Content\Images\helpdesk.PNG" />
+    <Content Include="Content\Images\hr\2017_training_workbook.jpg" />
+    <Content Include="Content\Images\hr\address_change_form.jpg" />
+    <Content Include="Content\Images\hr\business_travel_expense.jpg" />
+    <Content Include="Content\Images\hr\conf_employee_assistance.jpg" />
+    <Content Include="Content\Images\hr\corporate_credit_card.jpg" />
+    <Content Include="Content\Images\hr\direct_deposit.jpg" />
+    <Content Include="Content\Images\hr\employee_corrective_action.jpg" />
+    <Content Include="Content\Images\hr\expense_report_approval.jpg" />
+    <Content Include="Content\Images\hr\expense_report_entry.jpg" />
+    <Content Include="Content\Images\hr\local_earned_income_tax.jpg" />
+    <Content Include="Content\Images\hr\matching_gift_request.jpg" />
+    <Content Include="Content\Images\hr\new_hire_packet_sign-off.jpg" />
+    <Content Include="Content\Images\hr\personal_protective_equipme.jpg" />
+    <Content Include="Content\Images\hr\ppe_safety_glasses.jpg" />
+    <Content Include="Content\Images\hr\pto_approval_form.jpg" />
+    <Content Include="Content\Images\hr\quarterly_touch_base_emp.jpg" />
+    <Content Include="Content\Images\hr\quarterly_touch_base_man.jpg" />
+    <Content Include="Content\Images\hr\w4_form.jpg" />
+    <Content Include="Content\Images\huddle_stuff\pic.jpg" />
+    <Content Include="Content\Images\huddle_stuff\pic2.jpg" />
+    <Content Include="Content\Images\huddle_stuff\pic3.jpg" />
+    <Content Include="Content\Images\indust.jpg" />
+    <Content Include="Content\Images\industrial-blur.jpg" />
+    <Content Include="Content\Images\industrial-light-blur.jpg" />
+    <Content Include="Content\Images\industrial.jpg" />
+    <Content Include="Content\Images\industrial4.jpg" />
+    <Content Include="Content\Images\kewl.png" />
+    <Content Include="Content\Images\kewl2.png" />
+    <Content Include="Content\Images\locations\akron-ohio.jpg" />
+    <Content Include="Content\Images\locations\asheville.jpg" />
+    <Content Include="Content\Images\locations\facility2.jpg" />
+    <Content Include="Content\Images\locations\facility3_large.jpg" />
+    <Content Include="Content\Images\locations\facility4.jpg" />
+    <Content Include="Content\Images\locations\greensboro.jpg" />
+    <Content Include="Content\Images\locations\office.PNG" />
+    <Content Include="Content\Images\locations\pic_148.jpg" />
+    <Content Include="Content\Images\locations\pic_152.jpg" />
+    <Content Include="Content\Images\locations\pic_153_2.jpg" />
+    <Content Include="Content\Images\locations\pic_56.jpg" />
+    <Content Include="Content\Images\locations\reading.jpg" />
+    <Content Include="Content\Images\locations\towers2.jpg" />
+    <Content Include="Content\Images\locations\towers_edited.jpg" />
+    <Content Include="Content\Images\logo_triangles.png" />
+    <Content Include="Content\Images\long-industrial.jpg" />
+    <Content Include="Content\Images\long-truck.jpg" />
+    <Content Include="Content\Images\machine2.jpg" />
+    <Content Include="Content\Images\mapy.png" />
+    <Content Include="Content\Images\mapy2.png" />
+    <Content Include="Content\Images\mapy3.png" />
+    <Content Include="Content\Images\mars-paving.jpg" />
+    <Content Include="Content\Images\mars1.jpg" />
+    <Content Include="Content\Images\masthead_logo.png" />
+    <Content Include="Content\Images\members.jpg" />
+    <Content Include="Content\Images\mercer-front.jpg" />
+    <Content Include="Content\Images\mercer.jpg" />
+    <Content Include="Content\Images\mercer1.jpg" />
+    <Content Include="Content\Images\mercer2.jpg" />
+    <Content Include="Content\Images\mini-truck-500.jpg" />
+    <Content Include="Content\Images\mini-truck.jpg" />
+    <Content Include="Content\Images\motor.jpg" />
+    <Content Include="Content\Images\office.jpg" />
+    <Content Include="Content\Images\offices_and_plants.jpg" />
+    <Content Include="Content\Images\office_construction.jpg" />
+    <Content Include="Content\Images\old-barrels-high.jpg" />
+    <Content Include="Content\Images\old-barrels-low.jpg" />
+    <Content Include="Content\Images\old-building.jpg" />
+    <Content Include="Content\Images\old-workers.jpg" />
+    <Content Include="Content\Images\open_door.jpg" />
+    <Content Include="Content\Images\panel2.jpg" />
+    <Content Include="Content\Images\pano.jpg" />
+    <Content Include="Content\Images\parkinglot_asphalt.jpg" />
+    <Content Include="Content\Images\Paved-road-grey.jpg" />
+    <Content Include="Content\Images\Paved-road2.jpg" />
+    <Content Include="Content\Images\paychex.PNG" />
+    <Content Include="Content\Images\pexels\abstract-tunnel-low.jpg" />
+    <Content Include="Content\Images\pexels\abstract-walls-low.jpg" />
+    <Content Include="Content\Images\pexels\art-shapes.jpg" />
+    <Content Include="Content\Images\pexels\autumn-road-low.jpg" />
+    <Content Include="Content\Images\pexels\bike-sign-low.jpg" />
+    <Content Include="Content\Images\pexels\blueart.jpg" />
+    <Content Include="Content\Images\pexels\blury.jpg" />
+    <Content Include="Content\Images\pexels\brick-wall-low.jpg" />
+    <Content Include="Content\Images\pexels\california-road-low.jpg" />
+    <Content Include="Content\Images\pexels\chain.jpg" />
+    <Content Include="Content\Images\pexels\colorful-blur.jpg" />
+    <Content Include="Content\Images\pexels\cracked-road.jpg" />
+    <Content Include="Content\Images\pexels\deco.jpg" />
+    <Content Include="Content\Images\pexels\electric-panel.jpg" />
+    <Content Include="Content\Images\pexels\exit-sign.jpg" />
+    <Content Include="Content\Images\pexels\fall-autumn-red-season-low.jpg" />
+    <Content Include="Content\Images\pexels\feet-arrow-low.jpg" />
+    <Content Include="Content\Images\pexels\floor1.jpg" />
+    <Content Include="Content\Images\pexels\floor2.jpg" />
+    <Content Include="Content\Images\pexels\garden-low.jpg" />
+    <Content Include="Content\Images\pexels\hats.jpg" />
+    <Content Include="Content\Images\pexels\highway-low.jpeg" />
+    <Content Include="Content\Images\pexels\highway2-low.jpeg" />
+    <Content Include="Content\Images\pexels\highway3-low.jpeg" />
+    <Content Include="Content\Images\pexels\hr-stock-low.jpg" />
+    <Content Include="Content\Images\pexels\hr-stock2-low.jpg" />
+    <Content Include="Content\Images\pexels\hr-stock3-low.jpg" />
+    <Content Include="Content\Images\pexels\low-road-low.jpg" />
+    <Content Include="Content\Images\pexels\metal.jpg" />
+    <Content Include="Content\Images\pexels\modern1-low.jpg" />
+    <Content Include="Content\Images\pexels\modern2.jpg" />
+    <Content Include="Content\Images\pexels\modern3.jpg" />
+    <Content Include="Content\Images\pexels\modern4.jpg" />
+    <Content Include="Content\Images\pexels\night-shade-low.jpg" />
+    <Content Include="Content\Images\pexels\night-timelapse-low.jpg" />
+    <Content Include="Content\Images\pexels\onramp-low.jpeg" />
+    <Content Include="Content\Images\pexels\onramp-low.jpg" />
+    <Content Include="Content\Images\pexels\open-road-low.jpg" />
+    <Content Include="Content\Images\pexels\pavement-markings.jpeg" />
+    <Content Include="Content\Images\pexels\phone-road-low.jpg" />
+    <Content Include="Content\Images\pexels\qa-sign.jpg" />
+    <Content Include="Content\Images\pexels\road-clouds-low.jpg" />
+    <Content Include="Content\Images\pexels\road-trees2-low.jpg" />
+    <Content Include="Content\Images\pexels\road-trees3-low.jpg" />
+    <Content Include="Content\Images\pexels\road-trees4-low.jpg" />
+    <Content Include="Content\Images\pexels\rock-wall-low.jpg" />
+    <Content Include="Content\Images\pexels\rocky-road-low.jpg" />
+    <Content Include="Content\Images\pexels\sky1.jpg" />
+    <Content Include="Content\Images\pexels\speed-sign.jpg" />
+    <Content Include="Content\Images\pexels\stairs.jpg" />
+    <Content Include="Content\Images\pexels\stock-color-low.jpg" />
+    <Content Include="Content\Images\pexels\stop-sign-low.jpg" />
+    <Content Include="Content\Images\pexels\street1.jpg" />
+    <Content Include="Content\Images\pexels\street2.jpg" />
+    <Content Include="Content\Images\pexels\street3.jpg" />
+    <Content Include="Content\Images\pexels\timelapse-tunnel-low.jpg" />
+    <Content Include="Content\Images\pexels\traffic-light-low.jpg" />
+    <Content Include="Content\Images\pexels\traffic-light-sideways-low.jpg" />
+    <Content Include="Content\Images\pexels\trail.jpeg" />
+    <Content Include="Content\Images\pexels\two-way-sign.jpg" />
+    <Content Include="Content\Images\pexels\unop\blackroad.jpg" />
+    <Content Include="Content\Images\pexels\unop\bumpy.jpg" />
+    <Content Include="Content\Images\pexels\unop\icon-pattern.png" />
+    <Content Include="Content\Images\pexels\unop\moss.jpg" />
+    <Content Include="Content\Images\pexels\unop\screen.jpg" />
+    <Content Include="Content\Images\pexels\unop\screen_2x.jpg" />
+    <Content Include="Content\Images\pexels\unop\shapes.png" />
+    <Content Include="Content\Images\pexels\vines-low.jpg" />
+    <Content Include="Content\Images\pexels\wall-hats.jpg" />
+    <Content Include="Content\Images\pexels\water-drops.jpeg" />
+    <Content Include="Content\Images\pexels\worker-blueprints.jpg" />
+    <Content Include="Content\Images\Pickup in Utah.jpg" />
+    <Content Include="Content\Images\Pickup-in-Utah-low.jpg" />
+    <Content Include="Content\Images\pic_140.jpg" />
+    <Content Include="Content\Images\pic_152.jpg" />
+    <Content Include="Content\Images\pic_153_2.jpg" />
+    <Content Include="Content\Images\pic_153_3.jpg" />
+    <Content Include="Content\Images\pic_162.jpg" />
+    <Content Include="Content\Images\pic_162_2.jpg" />
+    <Content Include="Content\Images\pic_178.jpg" />
+    <Content Include="Content\Images\pic_190.jpg" />
+    <Content Include="Content\Images\pic_22.jpg" />
+    <Content Include="Content\Images\pic_38.jpg" />
+    <Content Include="Content\Images\pic_46.jpg" />
+    <Content Include="Content\Images\pic_56.jpg" />
+    <Content Include="Content\Images\pipes.jpg" />
+    <Content Include="Content\Images\pipes1.jpg" />
+    <Content Include="Content\Images\pipes2.jpg" />
+    <Content Include="Content\Images\pipes3.jpg" />
+    <Content Include="Content\Images\pittsburgh-blur.jpg" />
+    <Content Include="Content\Images\plansource.PNG" />
+    <Content Include="Content\Images\products\asphalt-binder.jpg" />
+    <Content Include="Content\Images\rail.jpg" />
+    <Content Include="Content\Images\reading\reading1.jpg" />
+    <Content Include="Content\Images\reading\reading2.jpg" />
+    <Content Include="Content\Images\rs-nasa.jpg" />
+    <Content Include="Content\Images\RS-vectorized.svg" />
+    <Content Include="Content\Images\rshomeheader.jpg" />
+    <Content Include="Content\Images\rtower.jpg" />
+    <Content Include="Content\Images\russ-truck.jpg" />
+    <Content Include="Content\Images\russell-hat.jpg" />
+    <Content Include="Content\Images\russell-slide.jpg" />
+    <Content Include="Content\Images\russell-tanker.jpg" />
+    <Content Include="Content\Images\russell-tower-banner.jpg" />
+    <Content Include="Content\Images\russell-tower3.jpg" />
+    <Content Include="Content\Images\russell-truck.jpg" />
+    <Content Include="Content\Images\russell-truck2.jpg" />
+    <Content Include="Content\Images\russelltriangle.jpg" />
+    <Content Include="Content\Images\russell_old.jpg" />
+    <Content Include="Content\Images\sds\AEP.jpg" />
+    <Content Include="Content\Images\sds\AET.jpg" />
+    <Content Include="Content\Images\sds\CNTTC.jpg" />
+    <Content Include="Content\Images\sds\CQS1H.jpg" />
+    <Content Include="Content\Images\sds\CQS1HPM.jpg" />
+    <Content Include="Content\Images\sds\CRS1.jpg" />
+    <Content Include="Content\Images\sds\CRS2L.jpg" />
+    <Content Include="Content\Images\sds\CSS1.jpg" />
+    <Content Include="Content\Images\sds\CSS1H.jpg" />
+    <Content Include="Content\Images\sds\CSS1HL.jpg" />
+    <Content Include="Content\Images\sds\E12.jpg" />
+    <Content Include="Content\Images\sds\grip-tight.jpg" />
+    <Content Include="Content\Images\sds\HFMS2.jpg" />
+    <Content Include="Content\Images\sds\HPColdPatch.jpg" />
+    <Content Include="Content\Images\sds\LBM.jpg" />
+    <Content Include="Content\Images\sds\LTBC.jpg" />
+    <Content Include="Content\Images\sds\MC250.jpg" />
+    <Content Include="Content\Images\sds\MC250ADD.jpg" />
+    <Content Include="Content\Images\sds\MC30.jpg" />
+    <Content Include="Content\Images\sds\MWS150.jpg" />
+    <Content Include="Content\Images\sds\PASSCR.jpg" />
+    <Content Include="Content\Images\sds\Primer20.jpg" />
+    <Content Include="Content\Images\sds\RC30.jpg" />
+    <Content Include="Content\Images\sds\RS1.jpg" />
+    <Content Include="Content\Images\sds\SS1.jpg" />
+    <Content Include="Content\Images\sds\SS1L.jpg" />
+    <Content Include="Content\Images\sds\TACK.jpg" />
+    <Content Include="Content\Images\silhouette.jpg" />
+    <Content Include="Content\Images\small_movie.mp4" />
+    <Content Include="Content\Images\soft2.png" />
+    <Content Include="Content\Images\soft3.png" />
+    <Content Include="Content\Images\soft3_2.png" />
+    <Content Include="Content\Images\sprite.png" />
+    <Content Include="Content\Images\stone_truck.jpg" />
+    <Content Include="Content\Images\stone_truck2.jpg" />
+    <Content Include="Content\Images\street-cone.png" />
+    <Content Include="Content\Images\sw1.jpg" />
+    <Content Include="Content\Images\sw2.jpg" />
+    <Content Include="Content\Images\sw3.jpg" />
+    <Content Include="Content\Images\tailgate1.jpg" />
+    <Content Include="Content\Images\tailgate2.jpg" />
+    <Content Include="Content\Images\thumb1.jpg" />
+    <Content Include="Content\Images\thumb10.jpg" />
+    <Content Include="Content\Images\thumb2.jpg" />
+    <Content Include="Content\Images\thumb3.jpg" />
+    <Content Include="Content\Images\thumb4.jpg" />
+    <Content Include="Content\Images\thumb5.jpg" />
+    <Content Include="Content\Images\thumb6.jpg" />
+    <Content Include="Content\Images\thumb7.jpg" />
+    <Content Include="Content\Images\thumb8.jpg" />
+    <Content Include="Content\Images\thumb9.jpg" />
+    <Content Include="Content\Images\towers2.jpg" />
+    <Content Include="Content\Images\towers_edited.jpg" />
+    <Content Include="Content\Images\trademarks\approved-logos\JASA ASPHALT logo-1.tif" />
+    <Content Include="Content\Images\trademarks\approved-logos\Old\NEW HE LogoFINAL_division.jpg" />
+    <Content Include="Content\Images\trademarks\approved-logos\Old\RS LOGO2 redblue.png" />
+    <Content Include="Content\Images\trademarks\approved-logos\Old\RS LOGO2 redblueRGB.jpg" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoNoTag.jpg" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoNoTag.png" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoNoTag_Black.jpg" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoNoTag_Black.png" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoNoTag_White.png" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoWithTag.jpg" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoWithTag.png" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoWithTag_Black.jpg" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoWithTag_Black.png" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoWithTag_White.png" />
+    <Content Include="Content\Images\trademarks\approved-logos\TPR-Logo.jpg" />
+    <Content Include="Content\Images\trademarks\approved-logos\TPR-Logo_rgb.jpg" />
+    <Content Include="Content\Images\trademarks\associates\aema.png" />
+    <Content Include="Content\Images\trademarks\associates\aema2.png" />
+    <Content Include="Content\Images\trademarks\associates\arra.png" />
+    <Content Include="Content\Images\trademarks\associates\issa.png" />
+    <Content Include="Content\Images\trademarks\associates\napa.jpg" />
+    <Content Include="Content\Images\trademarks\associates\penndot.png" />
+    <Content Include="Content\Images\trademarks\associates\ppc.jpg" />
+    <Content Include="Content\Images\trademarks\associates\ppra.png" />
+    <Content Include="Content\Images\trademarks\associates\ppra2.png" />
+    <Content Include="Content\Images\trademarks\associates\ppra3.png" />
+    <Content Include="Content\Images\trademarks\associates\st-wooten.jpg" />
+    <Content Include="Content\Images\trademarks\Hammaker-logo.svg" />
+    <Content Include="Content\Images\trademarks\mytrades\deco1.png" />
+    <Content Include="Content\Images\trademarks\mytrades\deco3.png" />
+    <Content Include="Content\Images\trademarks\mytrades\four.png" />
+    <Content Include="Content\Images\trademarks\mytrades\he.png" />
+    <Content Include="Content\Images\trademarks\mytrades\hee.png" />
+    <Content Include="Content\Images\trademarks\mytrades\one.png" />
+    <Content Include="Content\Images\trademarks\mytrades\rs.png" />
+    <Content Include="Content\Images\trademarks\mytrades\rs2.png" />
+    <Content Include="Content\Images\trademarks\mytrades\rs3.png" />
+    <Content Include="Content\Images\trademarks\mytrades\rs4.png" />
+    <Content Include="Content\Images\trademarks\mytrades\rs5.png" />
+    <Content Include="Content\Images\trademarks\mytrades\rs6.png" />
+    <Content Include="Content\Images\trademarks\mytrades\rs7.png" />
+    <Content Include="Content\Images\trademarks\mytrades\rs_opacity.png" />
+    <Content Include="Content\Images\trademarks\mytrades\sw.png" />
+    <Content Include="Content\Images\trademarks\mytrades\three.png" />
+    <Content Include="Content\Images\trademarks\mytrades\two.png" />
+    <Content Include="Content\Images\trademarks\Russell-logo.svg" />
+    <Content Include="Content\Images\trademarks\sw.png" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\favicon.png" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\gears.jpg" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\he-logo.png" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\he1.jpg" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\hee1.jpg" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\hee2.jpg" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\logo-triangles.png" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\logo-with-triangles-white.png" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\logos-inline.jpg" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\nav-img-logo.jpg" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\rs-cup-small.jpg" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\rs-cup.jpg" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\rs-he.png" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\rs-letters.jpg" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\rs-letters.png" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\rs-letters2.png" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\rs-square-white.png" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\rs-square.jpg" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\rs-triangle-white.png" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\rs1.jpg" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\rscool2.png" />
+    <Content Include="Content\Images\trademarks\trademark_thumbs\sw.png" />
+    <Content Include="Content\Images\truck-line.jpg" />
+    <Content Include="Content\Images\truck-line2.jpg" />
+    <Content Include="Content\Images\truck-tower2.jpg" />
+    <Content Include="Content\Images\tubes.jpg" />
+    <Content Include="Content\Images\worker-pic.jpg" />
+    <Content Include="Content\Images\worker1.jpg" />
+    <Content Include="Content\Images\worker3.jpg" />
+    <Content Include="Content\Images\workers.jpg" />
+    <Content Include="Content\Images\workers2.jpg" />
+    <Content Include="Content\Images\your_voice_matters.jpg" />
+    <Content Include="Content\Main.css" />
+    <Content Include="Content\Reset.css" />
+    <Content Include="Content\Script.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Documents\brochures\bituminous-seal-coat.pdf" />
+    <Content Include="Content\Documents\brochures\fiber-mat.pdf" />
+    <Content Include="Content\Documents\brochures\flex-base.pdf" />
+    <Content Include="Content\Documents\brochures\grip-tight.pdf" />
+    <Content Include="Content\Documents\brochures\jasahp-light.pdf" />
+    <Content Include="Content\Documents\brochures\jasahp.pdf" />
+    <Content Include="Content\Documents\brochures\manufacturing.pdf" />
+    <Content Include="Content\Documents\brochures\overview.pdf" />
+    <Content Include="Content\Documents\hr\address_change_form.pdf" />
+    <Content Include="Content\Documents\hr\business_travel_expense.pdf" />
+    <Content Include="Content\Documents\hr\conf_employee_assistance_program.pdf" />
+    <Content Include="Content\Documents\hr\copy_of_2017_training_workbook.pdf" />
+    <Content Include="Content\Documents\hr\corporate_credit_card.pdf" />
+    <Content Include="Content\Documents\hr\direct_deposit.pdf" />
+    <Content Include="Content\Documents\hr\ee_registration_instructions.pdf" />
+    <Content Include="Content\Documents\hr\employee_corrective_action.pdf" />
+    <Content Include="Content\Documents\hr\expense_report_online_approval.pdf" />
+    <Content Include="Content\Documents\hr\expense_report_online_entry.pdf" />
+    <Content Include="Content\Documents\hr\local_earned_income_tax_withholding_form.pdf" />
+    <Content Include="Content\Documents\hr\matching_gift_request.pdf" />
+    <Content Include="Content\Documents\hr\new_hire_packet_sign-off.pdf" />
+    <Content Include="Content\Documents\hr\paychex_flex_mobile_app_employee.pdf" />
+    <Content Include="Content\Documents\hr\personal_protective_equipment.pdf" />
+    <Content Include="Content\Documents\hr\ppe_safety_glasses.pdf" />
+    <Content Include="Content\Documents\hr\pto_approval_form.pdf" />
+    <Content Include="Content\Documents\hr\quarterly_touch_base_for_employee.pdf" />
+    <Content Include="Content\Documents\hr\quarterly_touch_base_for_manager.pdf" />
+    <Content Include="Content\Documents\hr\view_personal_and_payroll_information.pdf" />
+    <Content Include="Content\Documents\hr\w4_form.pdf" />
+    <Content Include="Content\Documents\sds\AEP-sds.PDF" />
+    <Content Include="Content\Documents\sds\AET-sds.PDF" />
+    <Content Include="Content\Documents\sds\CNTTC-sds.pdf" />
+    <Content Include="Content\Documents\sds\CQS1H-sds.PDF" />
+    <Content Include="Content\Documents\sds\CQS1HPM-sds.PDF" />
+    <Content Include="Content\Documents\sds\CRS1-sds.PDF" />
+    <Content Include="Content\Documents\sds\CRS2L-sds.pdf" />
+    <Content Include="Content\Documents\sds\CSS1-sds.PDF" />
+    <Content Include="Content\Documents\sds\CSS1H-sds.PDF" />
+    <Content Include="Content\Documents\sds\CSS1HL-sds.PDF" />
+    <Content Include="Content\Documents\sds\E12-sds.PDF" />
+    <Content Include="Content\Documents\sds\grip-tight-sds.PDF" />
+    <Content Include="Content\Documents\sds\HFMS2-sds.PDF" />
+    <Content Include="Content\Documents\sds\HPColdPatch-sds.pdf" />
+    <Content Include="Content\Documents\sds\LBM-sds.PDF" />
+    <Content Include="Content\Documents\sds\LTBC-sds.PDF" />
+    <Content Include="Content\Documents\sds\MC250-sds.PDF" />
+    <Content Include="Content\Documents\sds\MC250ADD-sds.PDF" />
+    <Content Include="Content\Documents\sds\MC30-sds.PDF" />
+    <Content Include="Content\Documents\sds\MWS150-sds.PDF" />
+    <Content Include="Content\Documents\sds\PASSCR-sds.PDF" />
+    <Content Include="Content\Documents\sds\Primer20-sds.PDF" />
+    <Content Include="Content\Documents\sds\RC30-sds.pdf" />
+    <Content Include="Content\Documents\sds\RS1-sds.PDF" />
+    <Content Include="Content\Documents\sds\SS1-sds.pdf" />
+    <Content Include="Content\Documents\sds\SS1L-sds.PDF" />
+    <Content Include="Content\Documents\sds\TACK-sds.pdf" />
+    <Content Include="Content\Images\trademarks\approved-logos\Old\HammakerEastBLACK_division.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\Old\HammakerEastWHITE.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\Old\HammakerEastWHITE_division.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\Old\NEW HE LogoFINAL.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\Old\NEW HE LogoFINAL_division.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\Old\RS LOGO2 BLACK.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\Old\RS LOGO2 redblue.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\Old\RS LOGO2_knockout.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoNoTag.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoNoTag_Black.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoNoTag_White.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoWithTag.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoWithTag_Black.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_HE_LogoWithTag_White.eps" />
+    <Content Include="Content\Images\trademarks\approved-logos\RS_LogoTechSpecs_2017.docx" />
+    <Content Include="Content\Images\trademarks\approved-logos\TPR Logo3[5].pdf" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Content\Images\huddle_stuff\09112019 HUDDLE NOTES.pdf" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\okwhoa.com.pubxml" />
+    <None Include="Properties\PublishProfiles\russellstandard.com.pubxml" />
+    <None Include="Properties\PublishProfiles\Russellstandard_Test2019.pubxml" />
+    <None Include="Properties\PublishProfiles\wiki.russellstandard.com.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="sitemap.xml" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Item.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelClass.cs" />
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\Home\AboutRussell.cshtml" />
+    <Content Include="Views\Home\Careers.cshtml" />
+    <Content Include="Views\Home\History.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage.cshtml" />
+    <Content Include="Views\Home\Environment.cshtml" />
+    <Content Include="Views\Home\Growth.cshtml" />
+    <Content Include="Views\Home\Innovation.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Members.cshtml" />
+    <Content Include="Views\Home\Safety.cshtml" />
+    <Content Include="Views\Home\Settings.cshtml" />
+    <Content Include="Views\Home\Trust.cshtml" />
+    <Content Include="Views\Home\Vision.cshtml" />
+    <Content Include="Views\Products\coag1031.cshtml" />
+    <Content Include="Views\Products\fb3.cshtml" />
+    <Content Include="Views\Products\fibermat.cshtml" />
+    <Content Include="Views\Products\griptight.cshtml" />
+    <Content Include="Views\Products\gsb88.cshtml" />
+    <Content Include="Views\Products\pass.cshtml" />
+    <Content Include="Views\Products\polypave.cshtml" />
+    <Content Include="Views\Products\SafetyDataSheets.cshtml" />
+    <Content Include="Views\Locations\Akron.cshtml" />
+    <Content Include="Views\Locations\Asheville.cshtml" />
+    <Content Include="Views\Locations\Baltimore.cshtml" />
+    <Content Include="Views\Locations\Chambersburg.cshtml" />
+    <Content Include="Views\Locations\Erie.cshtml" />
+    <Content Include="Views\Locations\Fayetteville.cshtml" />
+    <Content Include="Views\Locations\Greensboro.cshtml" />
+    <Content Include="Views\Locations\Mars.cshtml" />
+    <Content Include="Views\Locations\Mercer.cshtml" />
+    <Content Include="Views\Locations\Pittsburgh.cshtml" />
+    <Content Include="Views\Locations\Reading.cshtml" />
+    <Content Include="Views\Locations\Unioncity.cshtml" />
+    <Content Include="Views\Locations\Wheelertown.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Home\HammakerEast.cshtml" />
+    <Content Include="Views\Home\Sterlingwood.cshtml" />
+    <Content Include="Views\Shared\_ProductsLayout.cshtml" />
+    <Content Include="Views\Shared\_LocationsLayout.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Shared\_HammakerLayoutPage.cshtml" />
+    <Content Include="Views\Shared\_SterlingwoodLayoutPage.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Products\jasahp.cshtml" />
+    <Content Include="Views\Home\wiki.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53514</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53514/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

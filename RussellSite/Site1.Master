@@ -1,0 +1,246 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.Master.cs" Inherits="RussellSite.Site1"%>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="description" content="Russell Standard Corporation. Improving communities through better infrastructure." />
+    <meta name="google-site-verification" content="EL95xEk2TncSzq310VOnFu93fl_GIcMbX_E8mDJUrmo" /> <!-- For googles webmaster tools -->
+
+    <!--     <meta http-equiv="Cache-control" content="public">  for cache control   -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Russell Standard TEST</title>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    <!-- Google jquery cdn -->
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" rel="stylesheet">    <!-- montserrat -->
+
+    <!-- open sans currently not being used     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">    -->
+
+    <link rel="shortcut icon" href="<%=ResolveUrl("./images/trademarks/trademark_thumbs/favicon.png")%>" />
+
+    <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("./css/reset.css")%>" />
+    <link rel="stylesheet" type="text/css" href="<%=ResolveUrl("./css/main.css")%>" />
+
+    <!-- CDN for LESS 
+    <link rel="stylesheet/less" type="text/css" href="<%=ResolveUrl("./css/styles.less")%>" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>-->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <!-- used for integrating asp controls into your website -->
+        <div class="master-container">
+            <!-- used for grid layout -->
+
+                <div class="navbar-container" id="navbar-container">
+
+                    <div class="navbar-title">
+                        <a title="home" href="<%=ResolveUrl("./default.aspx")%>"></a>
+                        <%--<img src="<%=ResolveUrl("images/trademarks/trademark_thumbs/rs-letters2.png")%>" />--%>
+                        <%--<img src="<%=ResolveUrl("images/trademarks/Russell-logo.svg")%>" />--%>
+                    </div>
+                    
+
+                    <div class="navbar">
+
+                        <ul>
+                            <li id="navbar-home-link"><a href="<%=ResolveUrl("./default.aspx")%>">Home</a></li>
+
+                            <li id="navbar-li1">
+                                <a href="<%=ResolveUrl("./default.aspx")%>">Russell Standard</a>
+                                <ul>
+                                    <li><a href="<%=ResolveUrl("./aboutrussell.aspx")%>">About RS</a></li>
+                                    <li><a href="<%=ResolveUrl("./historyrussell.aspx")%>">History RS</a></li>
+                                    <li><a href="<%=ResolveUrl("./careers.aspx")%>">Careers</a></li>
+                                    <li><a href="<%=ResolveUrl("./products/products.aspx")%>">Products</a></li>
+                                    <li><a href="<%=ResolveUrl("./locations/locations.aspx")%>">Locations</a></li>
+                                    <li><a href="<%=ResolveUrl("./members.aspx")%>">Members</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="navbar-li2">
+                                <a href="<%=ResolveUrl("./hammakereast/hammakereast.aspx")%>">Hammaker East</a>
+                                <ul>
+                                    <li><a href="<%=ResolveUrl("./hammakereast/abouthammaker.aspx")%>">About HE</a></li>
+                                    <li><a href="<%=ResolveUrl("./careers.aspx")%>">Careers</a></li>
+                                </ul>
+                            </li>
+
+                            <li id="navbar-li3">
+                                <a href="<%=ResolveUrl("./sterlingwood/sterlingwood.aspx")%>">SterlingWood</a>
+                                <ul id="navbar-drop-last">
+                                    <li><a href="<%=ResolveUrl("./sterlingwood/aboutsterlingwood.aspx")%>">About SW</a></li>
+                                    <li><a href="<%=ResolveUrl("./sterlingwood/careerssterlingwood.aspx")%>">Careers SW</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <asp:LoginStatus ID="LoginStatus1" Text="Sign In" runat="server" OnLoggingOut="LoginStatus1_LoggingOut" />
+                                <ul id="hiddenusermenu">
+                                    <li><p><asp:LoginStatus ID="LoginStatus2" runat="server" OnLoggingOut="LoginStatus2_LoggingOut" /></p></li>
+                                    <li><a href="<%=ResolveUrl("./settings.aspx")%>">Settings</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="hamburger icon-hamburger" title="navigation" onclick="functionHamburgerMenu(this)">
+                        </div>
+
+                    </div>
+
+                    <div class="navigation-container clearfix" id="navigation-container">
+                        <ul>
+                            <li>
+                                <a href="<%=ResolveUrl("./default.aspx")%>">Home</a>
+                            </li>
+                            <li>
+                                <a href="<%=ResolveUrl("./aboutrussell.aspx")%>">About RS</a>
+                            </li>
+                            <li>
+                                <a href="<%=ResolveUrl("./historyrussell.aspx")%>">History RS</a>
+                            </li>
+                            <li>
+                                <a href="<%=ResolveUrl("./careers.aspx")%>">Careers</a>
+                            </li>
+                            <li>
+                                <a href="<%=ResolveUrl("./hammakereast/hammakereast.aspx")%>">Hammaker East</a>
+                            </li>
+                            <li>
+                                <a href="<%=ResolveUrl("./sterlingwood/sterlingwood.aspx")%>">SterlingWood</a>
+                            </li>
+                            <li>
+                                <a href="<%=ResolveUrl("./sterlingwood/careerssterlingwood.aspx")%>">Careers SW</a>
+                            </li>
+                            <li>
+                                <a href="<%=ResolveUrl("./products/products.aspx")%>">Products</a>
+                            </li>
+                            <li>
+                                <a href="<%=ResolveUrl("./locations/locations.aspx")%>">Locations</a>
+                            </li>
+                            <li>
+                                <a href="<%=ResolveUrl("./members.aspx")%>">Members</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- end navbar container -->
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <div class="footer-nav-wrapper clearfix">
+
+                <div class="footer-nav clearfix" id="footer-nav">
+                    <ul class="footer-nav-large clearfix">
+                        <li>
+                            <p>Russell Standard</p>
+                        </li>
+                        <li><a href="<%=ResolveUrl("./default.aspx")%>">Home</a></li>
+                        <li><a href="<%=ResolveUrl("./aboutrussell.aspx")%>">About Russell Standard</a></li>
+                        <li><a href="<%=ResolveUrl("./historyrussell.aspx")%>">History Russell Standard</a></li>
+                        <li><a href="<%=ResolveUrl("./products/products.aspx")%>">Products</a></li>
+                        <li><a href="<%=ResolveUrl("./locations/locations.aspx")%>">Locations</a></li>
+                    </ul>
+                    <ul class="footer-nav-large">
+                        <li>
+                            <p>Hammaker East</p>
+                        </li>
+                        <li><a href="<%=ResolveUrl("./hammakereast/hammakereast.aspx")%>">Hammaker East</a></li>
+                        <li><a href="<%=ResolveUrl("./hammakereast/abouthammaker.aspx")%>">About HE</a></li>
+                        <li><a href="https://www.facebook.com/hammakereast/">Hammaker East Facebook</a></li>
+                    </ul>
+                    <ul class="footer-nav-large">
+
+
+                        <li>
+                            <p>SterlingWood</p>
+                        </li>
+                        <li><a href="<%=ResolveUrl("./sterlingwood/sterlingwood.aspx")%>">SterlingWood</a></li>
+                        <li><a href="<%=ResolveUrl("./sterlingwood/aboutsterlingwood.aspx")%>">About SW</a></li>
+                        <li><a href="<%=ResolveUrl("./sterlingwood/careerssterlingwood.aspx")%>">Careers Sterlingwood</a></li>
+
+                    </ul>
+                    <ul class="footer-nav-large">
+                        <li>
+                            <p>Other</p>
+                        </li>
+                        <li><a href="<%=ResolveUrl("./members.aspx")%>">Members</a></li>
+                        <li><a href="<%=ResolveUrl("./careers.aspx")%>">Careers</a></li>
+
+                    </ul>
+
+                    <div class="footer-nav-small">
+                        <ul>
+                            <li>
+                                <p>Russell</p>
+                                <ul id="fna-1">
+                                    <li><a href="<%=ResolveUrl("./default.aspx")%>">Home</a></li>
+                                    <li><a href="<%=ResolveUrl("./aboutrussell.aspx")%>">About Russell Standard</a></li>
+                                    <li><a href="<%=ResolveUrl("./historyrussell.aspx")%>">History Russell Standard</a></li>
+                                    <li><a href="<%=ResolveUrl("./products/products.aspx")%>">Products</a></li>
+                                    <li><a href="<%=ResolveUrl("./locations/locations.aspx")%>">Locations</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Hammaker</p>
+                                <ul id="fna-2">
+                                    <li><a href="<%=ResolveUrl("./hammakereast/hammakereast.aspx")%>">Hammaker East</a></li>
+                                    <li><a href="<%=ResolveUrl("./hammakereast/abouthammaker.aspx")%>">About HE</a></li>
+                                    <li><a href="https://www.facebook.com/hammakereast/">Hammaker East Facebook</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>SterlingWood</p>
+                                <ul id="fna-3">
+                                    <li><a href="<%=ResolveUrl("./sterlingwood/sterlingwood.aspx")%>">SterlingWood</a></li>
+                                    <li><a href="<%=ResolveUrl("./sterlingwood/aboutsterlingwood.aspx")%>">About SW</a></li>
+                                    <li><a href="<%=ResolveUrl("./sterlingwood/careerssterlingwood.aspx")%>">Careers Sterlingwood</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Other</p>
+                                <ul id="fna-4">
+                                    <li><a href="<%=ResolveUrl("./members.aspx")%>">Members</a></li>
+                                    <li><a href="<%=ResolveUrl("./careers.aspx")%>">Careers</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- End footer nav-->
+
+                <div class="social-icons" id="social-icons">
+                    <a href="https://www.facebook.com/russellstandardcorporation"><i title="facebook" class="icon-facebook"></i></a>
+                    <a href="https://twitter.com/russstandcorp"><i title="twitter" class="icon-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/russell-standard-corporation"><i title="linkedin" class="icon-linkedin"></i></a>
+                </div>
+
+                <div class="footer-info">
+                    <p>Copyright &copy; Russell Standard Corporation</p>
+
+                    <p>All information is current as of: <span id="footer-date"></span></p>
+                    <div>
+                        <script id="godaddy-security-s" src="https://cdn.sucuri.net/badge/badge.js" data-s="204" data-i="9f4ff2bec3b2dad6bfe20c8ac187cc8b0d0b43ca70" data-p="o" data-c="l" data-t="g"></script>
+                    </div>
+                </div>
+                
+            </div><!-- End footer nav wrapper-->
+            
+            <script type="text/javascript" src="<%=ResolveUrl("./javascript/script.js")%>"></script>
+
+        </div><!-- end master container-->
+    </form>
+</body>
+
+</html>

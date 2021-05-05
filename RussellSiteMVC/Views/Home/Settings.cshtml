@@ -1,0 +1,39 @@
+﻿@model RussellSiteMVC.Models.User
+
+@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+<div class="currentuser">
+    <p>Authentication Name,Status,Type</p>
+    <ul>
+        <li>
+
+            <ul>
+                <li><p>@System.Web.HttpContext.Current.User.Identity.Name</p></li>
+                <li><p>@System.Web.HttpContext.Current.User.Identity.IsAuthenticated</p></li>
+                <li><p>@System.Web.HttpContext.Current.User.Identity.AuthenticationType</p></li>
+                <li><p></p></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="settings-person">
+
+    @using (Html.BeginForm("Settings", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        <h2>Change your password</h2>
+        @*@Html.TextBoxFor(model => model.Password, new { @class = "settings-textbox", placeholder = "Current Password" })*@
+
+        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "settings-textbox", placeholder = "New Password", id = "pw1" } })
+
+        <input type="submit" value="Submit" />
+        @Html.DisplayFor(model => model.Password, new { @class = "settings-person-label" })
+    }
+
+</div>
